@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Lua
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6dcf276c84cf9184cbfdc6a128ab9ed4
+    m_Address: Assets/Game/Prefabs
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefabs
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8ac19b7e35df46b46b4fdf5be4a06805, type: 2}
   m_SchemaSet:
