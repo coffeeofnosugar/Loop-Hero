@@ -1,5 +1,4 @@
-﻿using System;
-using Coffee.Management;
+﻿using Coffee.Management;
 using UnityEngine;
 
 namespace Coffee
