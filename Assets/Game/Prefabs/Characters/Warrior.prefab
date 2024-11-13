@@ -3301,11 +3301,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: 2073490031382135071}
   animation: {fileID: 11400000, guid: d3a5fa8573f63c04aabbb15d4604cda1, type: 2}
-  inputX: {fileID: 11400000, guid: 8fd5cc8b68d143e4bab46f0eea9c9705, type: 2}
-  inputY: {fileID: 11400000, guid: a92827164feebcd44b2049a72d0a392c, type: 2}
-  moveSpeed: 1.919599
-  runSpeed: 3.839193
-  smoothTime: 0.1
 --- !u!1 &6498242706043670725
 GameObject:
   m_ObjectHideFlags: 0
@@ -3477,6 +3472,7 @@ MonoBehaviour:
   stateMachine:
     _CurrentState: {fileID: 4978069322963323765}
     _DefaultState: {fileID: 4978069322963323765}
+  movementStats: {fileID: 11400000, guid: b723f2f4c3b470e429c1f935dd3fb1d4, type: 2}
 --- !u!143 &66107905011901875
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4234,7 +4230,7 @@ GameObject:
   - component: {fileID: 7889239207548382129}
   - component: {fileID: 8436326921230113302}
   - component: {fileID: 544517146925181313}
-  - component: {fileID: 8234530932132494079}
+  - component: {fileID: 1810533412673628069}
   m_Layer: 7
   m_Name: ModularCharacter_01
   m_TagString: Untagged
@@ -4296,7 +4292,7 @@ MonoBehaviour:
   _Animator: {fileID: 8436326921230113302}
   _Transitions: {fileID: 0}
   _ActionOnDisable: 0
---- !u!114 &8234530932132494079
+--- !u!114 &1810533412673628069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4305,12 +4301,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8089854931055347751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1481c382dc14f14a8dd59f818dd86b3, type: 3}
+  m_Script: {fileID: 11500000, guid: d90d197b5f47af544aff6260d9dfadf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Animator: {fileID: 8436326921230113302}
   _Target: {fileID: 66107905011901875}
-  character: {fileID: 2073490031382135071}
 --- !u!1 &8118326765463788241
 GameObject:
   m_ObjectHideFlags: 0

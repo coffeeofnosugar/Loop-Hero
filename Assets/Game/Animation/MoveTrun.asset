@@ -28,24 +28,26 @@ MonoBehaviour:
           _Names: []
         _Animations:
         - {fileID: 3094330708855449807, guid: 9508ccae6dd32b54cb61bd81eda00380, type: 3}
-        - {fileID: 3094330708855449807, guid: 45f47d2e897173a469caef4a1da768dd, type: 3}
-        - {fileID: 3094330708855449807, guid: 279dea3e5c907f84b8fd79b464404a01, type: 3}
-        - {fileID: 3094330708855449807, guid: e6d40ad7ea567f142b50c4e65d3ab030, type: 3}
-        - {fileID: 3094330708855449807, guid: 43ef596f78225224cb7f83a461194e6c, type: 3}
-        - {fileID: 3094330708855449807, guid: 60ce564cb0bcd8c4bba6cecbf7c3703f, type: 3}
-        - {fileID: 3094330708855449807, guid: 19d4cab1f1a36f44db3b80478afd3cb9, type: 3}
-        - {fileID: 3094330708855449807, guid: 04a8218d40d89874a8ba9bfc00ec8037, type: 3}
+        - {fileID: 7400000, guid: 7b50e650e8248f44990c8e7f3567257a, type: 3}
+        - {fileID: 7400000, guid: 1ce6178f580970141b5ae8f4b1099a73, type: 3}
+        - {fileID: 7400000, guid: df650cedb2a8eba478c76f1d0719c5c8, type: 3}
+        - {fileID: 7400000, guid: bd0444bc22714e14ebf5b621d8c640e1, type: 3}
+        - {fileID: 7400000, guid: 6faf7fe1472ea5944bfc7743327262b4, type: 3}
+        - {fileID: 7400000, guid: f23b56bbd2e2031419fe82c9b42d22aa, type: 3}
+        - {fileID: 7400000, guid: 8fb94f68e2f2e5042b565a5c25299be6, type: 3}
+        - {fileID: 7400000, guid: 7cec1becce4bac541a05b1df08166870, type: 3}
         _Speeds: []
         _SynchronizeChildren: 00
         _Thresholds:
         - {x: 0, y: 0}
-        - {x: 0, y: 1.9195993}
-        - {x: 0, y: -1.9195967}
-        - {x: 0, y: 3.8391926}
-        - {x: 0, y: -3.8391926}
-        - {x: 0, y: 5.75879}
-        - {x: -1.5707966, y: 0}
-        - {x: 1.5707966, y: 0}
+        - {x: 0, y: 1.8172798}
+        - {x: 0, y: -1.4204028}
+        - {x: 0, y: 2.719299}
+        - {x: 0, y: -2.458463}
+        - {x: 0, y: 5.859489}
+        - {x: 0, y: -4.4645324}
+        - {x: -1.6829954, y: 2.2245479}
+        - {x: 1.6829956, y: 2.267032}
         _DefaultParameter: {x: 0, y: 0}
         _Type: 0
         _ParameterNameX: {fileID: 11400000, guid: 8fd5cc8b68d143e4bab46f0eea9c9705, type: 2}

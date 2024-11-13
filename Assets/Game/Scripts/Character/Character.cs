@@ -1,4 +1,5 @@
-﻿using Animancer;
+﻿using System;
+using Animancer;
 using Animancer.FSM;
 using UnityEngine;
 
@@ -13,9 +14,13 @@ namespace Coffee
         [SerializeField] private StateMachine<CharacterState>.WithDefault stateMachine;
         public StateMachine<CharacterState>.WithDefault StateMachine => stateMachine;
 
+        [SerializeField] private MovementStatsSO movementStats;
+        public MovementStatsSO MovementStats => movementStats;
+
         private void Awake()
         {
             stateMachine.InitializeAfterDeserialize();
+            MovementStats.Movement = new SmoothedVector2Parameter(Animancer, MovementStats.inputX, MovementStats.inputY, MovementStats.smoothTime);
         }
     }
 }
