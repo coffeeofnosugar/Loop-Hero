@@ -11,8 +11,8 @@ namespace Coffee
         [SerializeField] private AnimancerComponent animancer;
         public AnimancerComponent Animancer => animancer;
         
-        [SerializeField] private StateMachine<CharacterState>.WithDefault stateMachine;
-        public StateMachine<CharacterState>.WithDefault StateMachine => stateMachine;
+        [SerializeField] private StateMachine<State, CharacterState>.WithDefault stateMachine;
+        public StateMachine<State, CharacterState>.WithDefault StateMachine => stateMachine;
 
         [SerializeField] private MovementStatsSO movementStats;
         public MovementStatsSO MovementStats => movementStats;

@@ -1,12 +1,23 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Coffee.Player
+namespace Coffee
 {
+    public enum State { Idle, Walk, Turn }
+
     public class PlayerBrain : MonoBehaviour
     {
         [SerializeField] private Character character;
         [SerializeField] private CharacterState idleState;
+        [SerializeField] private CharacterState walkState;
+        [SerializeField] private CharacterState turnState;
+
+        private void Awake()
+        {
+            character.StateMachine.AddRange(
+                new [] { State.Idle, State.Walk, State.Turn },
+                new [] { idleState, walkState, turnState });
+        }
 
         private void Update()
         {

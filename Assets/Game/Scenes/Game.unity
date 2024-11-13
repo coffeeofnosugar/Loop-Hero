@@ -858,6 +858,39 @@ Transform:
   - {fileID: 856229965}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1047573742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6476694526206332073, guid: 5ff69b1dba1d379429d509ebf5c54b5a, type: 3}
+  m_PrefabInstance: {fileID: 2763938444360029323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1047573746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047573742}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108a142625a5442f9db35c9433a1c348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _character: {fileID: 1627638430}
+  animation: {fileID: 0}
+--- !u!114 &1047573747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047573742}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108a142625a5442f9db35c9433a1c348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _character: {fileID: 1627638430}
+  animation: {fileID: 0}
 --- !u!1001 &1112299151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1331,6 +1364,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9013181609450902592, guid: 9eb0038f1a74ec840abe4b0f9a1f8e3b, type: 3}
   m_PrefabInstance: {fileID: 1610399811}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1627638430 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2073490031382135071, guid: 5ff69b1dba1d379429d509ebf5c54b5a, type: 3}
+  m_PrefabInstance: {fileID: 2763938444360029323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc53a81953bf4ec3b6c70b6046b5b3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1786630177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1553,10 +1597,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warrior
       objectReference: {fileID: 0}
+    - target: {fileID: 8097409914328249550, guid: 5ff69b1dba1d379429d509ebf5c54b5a, type: 3}
+      propertyPath: turnState
+      value: 
+      objectReference: {fileID: 1047573746}
+    - target: {fileID: 8097409914328249550, guid: 5ff69b1dba1d379429d509ebf5c54b5a, type: 3}
+      propertyPath: walkState
+      value: 
+      objectReference: {fileID: 1047573747}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6476694526206332073, guid: 5ff69b1dba1d379429d509ebf5c54b5a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1047573747}
+    - targetCorrespondingSourceObject: {fileID: 6476694526206332073, guid: 5ff69b1dba1d379429d509ebf5c54b5a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1047573746}
   m_SourcePrefab: {fileID: 100100000, guid: 5ff69b1dba1d379429d509ebf5c54b5a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

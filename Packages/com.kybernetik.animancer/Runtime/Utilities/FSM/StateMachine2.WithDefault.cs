@@ -1,6 +1,7 @@
 // Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2024 Kybernetik //
 
 using System;
+using Sirenix.OdinInspector.Editor;
 using UnityEngine;
 
 namespace Animancer.FSM
@@ -52,7 +53,7 @@ namespace Animancer.FSM
 
             /************************************************************************************************************************/
 
-            /// <summary>Creates a new <see cref="WithDefault"/>.</summary>
+            /// <summary>Creates a new <see cref="StateMachine{TState}.WithDefault"/>.</summary>
             public WithDefault()
             {
                 // Silly C# doesn't allow instance delegates to be assigned using field initializers.
@@ -61,7 +62,7 @@ namespace Animancer.FSM
 
             /************************************************************************************************************************/
 
-            /// <summary>Creates a new <see cref="WithDefault"/> and sets the <see cref="DefaultKey"/>.</summary>
+            /// <summary>Creates a new <see cref="StateMachine{TState}.WithDefault"/> and sets the <see cref="DefaultKey"/>.</summary>
             public WithDefault(TKey defaultKey)
                 : this()
             {
@@ -136,6 +137,25 @@ namespace Animancer.FSM
             /************************************************************************************************************************/
 #endif
             /************************************************************************************************************************/
+            
+#if UNITY_EDITOR && ODIN_INSPECTOR
+            /// <summary>
+            /// 由于<see cref="StateMachine{TKey, TState}"/>继承了<see cref="IDictionary{TKey, TValue}"/>接口，
+            /// 如果项目安装了Odin插件，<see cref="StateMachine{TKey, TState}"/>在Inspector窗口上只会序列化成字典，且不会序列化其他的字段，
+            /// 如 <see cref="_currentKey"/> 和 <see cref="WithDefault.DefaultKey"/>。
+            /// <para></para>
+            /// 定义此类后，Odin不会将<see cref="StateMachine{TKey, TState}"/>序列化成字典，且能序列化其他字段。
+            /// <para></para>
+            /// <see cref="ProcessedMemberPropertyResolver{T}"/>为一个抽象类，可以控制参数<see cref="T"/>在 Inspector 中如何序列化。
+            /// <para></para>
+            /// 使用[ResolverPriority(100)]修饰<see cref="SerializableResolver{T}"/>后，由于100大于默认的-5，
+            /// <see cref="T"/>将以<see cref="SerializableResolver{T}"/>的形式被序列化，即非字典类型
+            /// <remarks>
+            /// 该类只是用来定义<see cref="T"/>的序列化规则，告诉Odin插件该如何序列化，无需实例化和使用
+            /// </remarks></summary>
+            [ResolverPriority(100)]
+            private class SerializableResolver<T> : ProcessedMemberPropertyResolver<T> where T : StateMachine<TKey, TState> { }
+#endif
         }
     }
 }
