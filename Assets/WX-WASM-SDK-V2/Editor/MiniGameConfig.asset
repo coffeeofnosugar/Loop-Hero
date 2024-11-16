@@ -19,7 +19,7 @@ MonoBehaviour:
     assetLoadType: 1
     compressDataPackage: 1
     VideoUrl: 
-    DST: D:\TuanjieProject\Loop Hero\
+    DST: D:/Packages/LoopHero/WeChat
     StreamCDN: 
     bundleHashLength: 32
     bundlePathIdentifier: StreamingAssets;

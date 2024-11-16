@@ -847,7 +847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa44683b2d084d2d8f8c2d2aa2decaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
+  state: 0
   character: {fileID: 2083609950623222263}
   idleState: {fileID: 4920467979217456282}
   walkState: {fileID: 0}
@@ -5622,6 +5622,7 @@ MonoBehaviour:
     _CurrentState: {fileID: 4920467979217456282}
     _CurrentKey: 0
     _DefaultKey: 0
+  brain: {fileID: 2117697134064882719}
   movementStats: {fileID: 0}
   splineAnimate: {fileID: 0}
   Site: 2

@@ -1,15 +1,16 @@
 %YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
+%TAG !u! tag:yousandi.cn,2023:
 --- !u!1 &76608448989602440
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3884787442580381443}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: IndexFinger_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,10 +39,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1040812265003875726}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Cape_Attachment_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,10 +72,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 7803439798890742755}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Toes_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,10 +104,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3609069729315190005}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_06_Shoulder_Attachment_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,10 +137,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2129920202142828250}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: IndexFinger_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,10 +169,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3092816621158169955}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Clavicle_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,10 +203,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 7436047604505145102}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Finger_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,11 +236,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2204343641472904698}
   - component: {fileID: 6290006282772777835}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_KneeAttachRight_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,9 +280,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -312,16 +319,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0003291741, y: 0.014663428, z: 0.014340846}
     m_Extent: {x: 0.07268032, y: 0.094503365, z: 0.07609983}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &652274703987980482
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6052727123708713837}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_05_Arm_Upper_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,10 +360,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1952911658023115760}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Shoulder_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,10 +393,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8014675476657529346}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: IndexFinger_04 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,10 +425,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6132963594364886650}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Ball_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,11 +458,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2987931359243050917}
   - component: {fileID: 9198659477710968250}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_HandRight_Male_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,9 +502,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -539,16 +552,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.097798884, y: 0.022808991, z: -0.0188695}
     m_Extent: {x: 0.12961988, y: 0.07302638, z: 0.10462424}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &1128248719644891438
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5687274098314284453}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_00_HeadCoverings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,10 +595,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1047750869973042721}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_04_Arm_Upper_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -611,11 +628,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1637605249566822845}
   - component: {fileID: 8393971537923173628}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_ArmLowerLeft_Male_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,9 +672,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -696,16 +713,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.459978, y: -0.00041350722, z: 0.011475436}
     m_Extent: {x: 0.15190461, y: 0.06805251, z: 0.075897396}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &1440916876594852096
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 7955572816579304759}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_11_Leg_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,10 +754,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 7917667322602825051}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_07_Arm_Lower_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,10 +787,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6384123601010464526}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Finger_02 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,10 +820,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6004106862653425191}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_04_Back_Attachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,10 +852,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8513884179982346831}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Shoulder_Attachment_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,10 +884,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1464441171833593978}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Finger_01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -892,10 +917,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2453912268280566520}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Clavicle_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,10 +951,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3909818447267112445}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Finger_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,10 +984,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6454864025503124285}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_Head_No_Elements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -989,10 +1017,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5610844874977556558}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,10 +1052,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1903889432381195154}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Elbow_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1056,10 +1086,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2311387906730957142}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Spine_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1092,10 +1123,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8092653643726385926}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1127,10 +1159,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5242706102475690929}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Hips_Attachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1158,10 +1191,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8773075257235311277}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: IndexFinger_02 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1190,10 +1224,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3788277959976263638}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_Parts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1234,10 +1269,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1516665807201208685}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1268,10 +1304,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 553314953003725165}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_09_Hips_Attachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1300,10 +1337,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2511084218805734569}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: HeadCoverings_No_FacialHair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1331,10 +1369,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 153347769181831631}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_08_Hand_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1363,10 +1402,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4358778339496057979}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Elf_Ear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1394,10 +1434,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 7673575089326315600}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Modular_Characters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1427,10 +1468,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8849037523796160086}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_10_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1459,10 +1501,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5952258697835606449}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Elbow_Attachment_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1490,10 +1533,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8354959626704496976}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: HeadCoverings_No_Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1521,10 +1565,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2228963853048415574}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: IndexFinger_01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1553,10 +1598,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8638290694726788915}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Thumb_02 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1585,10 +1631,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3624423364028826009}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_Gender_Parts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1629,10 +1676,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4303412225144180970}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Cape_Attachment_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1661,10 +1709,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5206711775638448272}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_01_Eyebrows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1692,11 +1741,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2617812380624383536}
   - component: {fileID: 3077078322685534742}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_KneeAttachLeft_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1735,9 +1785,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1775,16 +1824,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00032873452, y: 0.014663756, z: 0.014340863}
     m_Extent: {x: 0.07268033, y: 0.09450336, z: 0.076099835}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &3870378825837792441
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3730556733430933091}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Thumb_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1813,10 +1865,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4488295811693117263}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: IndexFinger_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1845,10 +1898,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4311758586620127694}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: LowerLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1878,10 +1932,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3975119480452309127}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_01_Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1909,10 +1964,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 457514624380190516}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_02_Head_Attachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1942,10 +1998,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 907682573770369518}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: LowerLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1975,10 +2032,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6339537313242244393}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: IndexFinger_03 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2007,11 +2065,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 672434058949105638}
   - component: {fileID: 3667280811805869457}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_ElbowAttachRight_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2050,9 +2109,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2090,16 +2148,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.004907742, y: -0.006594179, z: 0.0025803298}
     m_Extent: {x: 0.09196817, y: 0.061398156, z: 0.066769265}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &4559863010827961165
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 188663871627001650}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Elbow_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2129,10 +2190,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5408129076457309404}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: HeadCoverings_Base_Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2160,10 +2222,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5835218404815071793}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Ankle_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2192,11 +2255,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8396983348527725539}
   - component: {fileID: 1300789236700525280}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_ArmUpperRight_Male_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2235,9 +2299,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2277,16 +2340,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.2829324, y: 0.027698934, z: -0.084650114}
     m_Extent: {x: 0.1910252, y: 0.093124494, z: 0.16264842}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &4743067684731420714
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 7006328710414251660}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Spine_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2315,10 +2381,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 837230213418373641}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2347,10 +2414,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3472187358141127612}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_11_Knee_Attachement_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2379,10 +2447,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1196600014121409642}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: IndexFinger_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2411,10 +2480,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1825800216209806815}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Cape_Attachment_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2443,11 +2513,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1642687045786901181}
   - component: {fileID: 4797699437310726865}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_LegRight_Male_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2486,9 +2557,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2529,17 +2599,20 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.27938086, y: 0.0024985075, z: 0.00019266456}
     m_Extent: {x: 0.250216, y: 0.27052006, z: 0.12210559}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &5184011444314764992
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2349928063515765752}
   - component: {fileID: 6692201701284758096}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_HipsAttachment_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2578,9 +2651,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2618,16 +2690,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.19848686, y: 0.01383359, z: -0.0031840876}
     m_Extent: {x: 0.044851452, y: 0.1224393, z: 0.11122497}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &5190111304604099088
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 7380002778346663387}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Knee_Attachment_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2655,10 +2730,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8025053869877149517}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Helmet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2686,10 +2762,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5927701037710718303}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Knee_Attachment_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2717,11 +2794,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1687074370532326135}
   - component: {fileID: 6246488987928991243}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_ShoulderAttachLeft_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2760,9 +2838,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2800,16 +2877,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0073339716, y: 0.007838368, z: 0.0076887906}
     m_Extent: {x: 0.11097429, y: 0.092938215, z: 0.14219336}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &5531538638372531847
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3806729847313497098}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Finger_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2837,10 +2917,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6464976537411003301}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_Head_All_Elements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2868,10 +2949,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4509218368458188439}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Cape_Attachment_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2899,10 +2981,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2242572676124570136}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Thumb_03 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2930,10 +3013,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5493365165617685079}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Ball_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2962,10 +3046,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2959590834741986599}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2994,10 +3079,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2535091864501863553}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Head_Attachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3025,10 +3111,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6235756179032354246}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Finger_04 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3056,10 +3143,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1366994599453572590}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Finger_03 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3088,10 +3176,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8760447637841806708}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Thumb_01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3120,10 +3209,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4700478189864123191}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_10_Knee_Attachement_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3152,10 +3242,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1238140883783824819}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_03_Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3184,10 +3275,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4693494033069005849}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chest_Attachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3215,10 +3307,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5035915548613320980}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Shoulder_Attachment_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3246,7 +3339,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5300589868409483766}
   - component: {fileID: 8097409914328249550}
@@ -3255,6 +3348,7 @@ GameObject:
   - component: {fileID: 6950625385857706265}
   - component: {fileID: 1637549049656750899}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: Brain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3288,7 +3382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa44683b2d084d2d8f8c2d2aa2decaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
+  state: 0
   character: {fileID: 2073490031382135071}
   idleState: {fileID: 4889128563529340752}
   walkState: {fileID: 4978069322963323765}
@@ -3358,10 +3452,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8947496421825317958}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3389,11 +3484,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6278253651275618558}
   - component: {fileID: 2414279132753570438}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_ElbowAttachLeft_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3432,9 +3528,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3472,18 +3567,22 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.004908502, y: -0.0065944195, z: 0.0025803149}
     m_Extent: {x: 0.0919683, y: 0.061398156, z: 0.06676925}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &6891382586631965721
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3638564580348594621}
   - component: {fileID: 2073490031382135071}
   - component: {fileID: 3169528261906782269}
+  - component: {fileID: 5890105652956581634}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Warrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3525,6 +3624,7 @@ MonoBehaviour:
     _CurrentState: {fileID: 4889128563529340752}
     _CurrentKey: 0
     _DefaultKey: 0
+  brain: {fileID: 8097409914328249550}
   movementStats: {fileID: 11400000, guid: b723f2f4c3b470e429c1f935dd3fb1d4, type: 2}
   splineAnimate: {fileID: 3169528261906782269}
   Site: 0
@@ -3551,16 +3651,30 @@ MonoBehaviour:
   m_ObjectForwardAxis: 2
   m_ObjectUpAxis: 1
   m_StartOffset: 0
+--- !u!114 &5890105652956581634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891382586631965721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d42cdacabe4a545af1f325c2d29b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 2073490031382135071}
 --- !u!1 &7009794526653997761
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4289184129944649522}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_09_Hand_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3589,10 +3703,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2540232634288556346}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: UpperLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3621,10 +3736,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 9041452521740807959}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: UpperLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3653,10 +3769,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 7476808490224934834}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Back_Attachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3685,11 +3802,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 7675690112691047280}
   - component: {fileID: 5567482295638490213}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_HandLeft_Male_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3728,9 +3846,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3779,16 +3896,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.09779884, y: -0.022810796, z: 0.01886947}
     m_Extent: {x: 0.12961997, y: 0.07302664, z: 0.10462424}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &7491121127060308513
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 232294087910063725}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Toes_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3816,11 +3936,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4556132397993253367}
   - component: {fileID: 1507957709042677773}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_ArmLowerRight_Male_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3859,9 +3980,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3901,16 +4021,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.45997795, y: 0.00041043758, z: -0.011475414}
     m_Extent: {x: 0.15190455, y: 0.06805252, z: 0.07589741}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &7565228268020098315
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6009326164938812522}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_06_Arm_Lower_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3939,11 +4062,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 757135246220596784}
   - component: {fileID: 2121832197267565341}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_Head_No_Elements_Male_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3982,9 +4106,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4023,16 +4146,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.18105648, y: -0.029492408, z: 0}
     m_Extent: {x: 0.20412953, y: 0.18984056, z: 0.13115364}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &7633254650043722153
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5215832418138019874}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Thumb_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4060,10 +4186,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 155879440527390854}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_12_Leg_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4092,10 +4219,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3734315106379323702}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Elbow_Attachment_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4123,10 +4251,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6790512978763302883}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Ankle_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4155,11 +4284,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 217346316213879072}
   - component: {fileID: 6191009470091783134}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_LegLeft_Male_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4198,9 +4328,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4240,16 +4369,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.2793813, y: -0.0024983883, z: -0.00019302964}
     m_Extent: {x: 0.25021598, y: 0.27052003, z: 0.12210548}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &8087890278865562995
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 324382817406346792}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Thumb_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4278,12 +4410,13 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 7889239207548382129}
   - component: {fileID: 8436326921230113302}
   - component: {fileID: 544517146925181313}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: ModularCharacter_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4309,7 +4442,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &8436326921230113302
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4323,7 +4456,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -4350,11 +4482,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2128340371870735973}
   - component: {fileID: 1317650765081258409}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_ArmUpperLeft_Male_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4393,9 +4526,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4435,16 +4567,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.2864064, y: -0.025349237, z: 0.08593778}
     m_Extent: {x: 0.18945017, y: 0.09586405, z: 0.15504907}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &8138558539244671703
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6722271579820168673}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Spine_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4473,10 +4608,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8009589936955306212}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_08_Elbow_Attachment_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4505,10 +4641,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6815429827356632955}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_02_FacialHair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4536,10 +4673,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 179723728384263025}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Male_00_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4569,11 +4707,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5918644507696665593}
   - component: {fileID: 8246928785457109792}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_ShoulderAttachRight_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4612,9 +4751,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4652,16 +4790,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0042509213, y: 0.0033842921, z: 0.008349016}
     m_Extent: {x: 0.112138994, y: 0.09510501, z: 0.14199795}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &8609971314926785802
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4085687851769500132}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Eyebrows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4689,10 +4830,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1615603759378266141}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4723,10 +4865,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3037803069988380621}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_12_Extra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4755,10 +4898,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3545743506069692173}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_07_Elbow_Attachment_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4787,10 +4931,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4642091625557022250}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_03_Chest_Attachment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4818,11 +4963,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6790060031012760656}
   - component: {fileID: 1600348786714989724}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_Hips_Male_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4861,9 +5007,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4905,16 +5050,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.2161066, y: -0.05144632, z: 0.000000007450581}
     m_Extent: {x: 0.29639804, y: 0.16991998, z: 0.23146382}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &8939746351461246689
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4655218741322207169}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Shoulder_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4943,10 +5091,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5830817528758443490}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: All_05_Shoulder_Attachment_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4975,10 +5124,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 7548598535695487980}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5006,11 +5156,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5782036503042499337}
   - component: {fileID: 2059468318526019805}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Chr_Torso_Male_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5049,9 +5200,8 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 3
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
+  m_virtualGeometry: 0
+  m_virtualGeometryShadow: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5097,16 +5247,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.3082876, y: 0.023254625, z: -0.0006688088}
     m_Extent: {x: 0.35318133, y: 0.2653628, z: 0.31426424}
   m_DirtyAABB: 0
+  m_EnableVSSkinning: 1
+  m_ReleaseMeshData: 1
 --- !u!1 &9210538035144288413
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 7535924788156235177}
   m_Layer: 7
+  m_HasEditorInfo: 1
   m_Name: Finger_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

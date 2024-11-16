@@ -1,6 +1,7 @@
 ﻿using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Coffee.Core.CharacterManagement
 {
@@ -8,7 +9,7 @@ namespace Coffee.Core.CharacterManagement
 
     public class Brain : MonoBehaviour
     {
-        [SerializeField, EnumToggleButtons, HideLabel] private State currentState;
+        [EnumToggleButtons, HideLabel] public State state;
         
         [SerializeField] private Character character;
         [SerializeField] private CharacterState idleState;
@@ -21,12 +22,12 @@ namespace Coffee.Core.CharacterManagement
             character.StateMachine.AddRange(
                 new [] { State.Idle, State.Walk, State.Attack, State.Die },
                 new [] { idleState, walkState, attackState, dieState });
-            character.StateMachine.ForceSetDefaultState += () => currentState = State.Idle;
+            character.StateMachine.ForceSetDefaultState += () => state = State.Idle;
         }
 
         private void Update()
         {
-            switch (currentState)
+            switch (state)
             {
                 case State.Idle:
                     character.StateMachine.TrySetDefaultState();
