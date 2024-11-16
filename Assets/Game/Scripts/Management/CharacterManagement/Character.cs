@@ -29,6 +29,10 @@ namespace Coffee.Core.CharacterManagement
         private void Awake()
         {
             stateMachine.InitializeAfterDeserialize();
+            if (SplineAnimate.Container == null)
+            {
+                SplineAnimate.Container = FindObjectOfType<SplineContainer>();
+            }
         }
     }
 }
