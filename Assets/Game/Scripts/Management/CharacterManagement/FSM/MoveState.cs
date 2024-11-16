@@ -5,13 +5,19 @@ namespace Coffee.Core.CharacterManagement
 {
     public class MoveState : CharacterState
     {
-        [SerializeField] private new TransitionAsset animation;
+        [SerializeField] public TransitionAsset _animation;
 
         private void OnEnable()
         {
-            character.MovementStats.Movement.TargetValue = character.SplineAnimate.MaxSpeed;
-            character.Animancer.Play(animation);
+            character.Brain.movement.TargetValue = character.SplineAnimate.MaxSpeed;
+            character.Animancer.Play(_animation);
             character.SplineAnimate.Play();
+        }
+
+        private void OnDisable()
+        {
+            character.Brain.movement.TargetValue = 0f;
+            character.SplineAnimate.Pause();
         }
     }
 }

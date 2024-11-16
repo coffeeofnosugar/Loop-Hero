@@ -1540,6 +1540,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1084495031}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1097711771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6891382586631965721, guid: 5ff69b1dba1d379429d509ebf5c54b5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1882919971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1097711774 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2073490031382135071, guid: 5ff69b1dba1d379429d509ebf5c54b5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1882919971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097711771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc53a81953bf4ec3b6c70b6046b5b3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1097711776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097711771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d42cdacabe4a545af1f325c2d29b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1097711774}
 --- !u!1001 &1112299151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1960,7 +1991,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
   NestUnderThis: 1
-  GameObjectToPool: {fileID: 8779536322380672171, guid: 4a9df6731915c134384ef0f56de890a2,
+  GameObjectToPool: {fileID: 6891382586631965721, guid: 5ff69b1dba1d379429d509ebf5c54b5a,
     type: 3}
   PoolSize: 5
   PoolCanExpand: 1
@@ -2896,12 +2927,16 @@ PrefabInstance:
     - target: {fileID: 6891382586631965721, guid: 5ff69b1dba1d379429d509ebf5c54b5a,
         type: 3}
       propertyPath: m_Name
-      value: Warrior
+      value: Hero
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6891382586631965721, guid: 5ff69b1dba1d379429d509ebf5c54b5a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1097711776}
   m_SourcePrefab: {fileID: 100100000, guid: 5ff69b1dba1d379429d509ebf5c54b5a, type: 3}
 --- !u!1 &1889170717
 GameObject:

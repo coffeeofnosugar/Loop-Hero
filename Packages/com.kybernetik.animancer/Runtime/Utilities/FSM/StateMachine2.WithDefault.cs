@@ -1,6 +1,7 @@
 // Animancer // https://kybernetik.com.au/animancer // Copyright 2018-2024 Kybernetik //
 
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Animancer.FSM
@@ -19,6 +20,8 @@ namespace Animancer.FSM
         /// https://kybernetik.com.au/animancer/api/Animancer.FSM/WithDefault
         /// 
         [Serializable]
+        // [InlineProperty(LabelWidth = 90)]
+        [FoldoutGroup("State Machine"), HideLabel]
         public new class WithDefault : StateMachine<TKey, TState>
         {
             /************************************************************************************************************************/
@@ -52,7 +55,7 @@ namespace Animancer.FSM
 
             /************************************************************************************************************************/
 
-            /// <summary>Creates a new <see cref="WithDefault"/>.</summary>
+            /// <summary>Creates a new <see cref="StateMachine{TState}.WithDefault"/>.</summary>
             public WithDefault()
             {
                 // Silly C# doesn't allow instance delegates to be assigned using field initializers.
@@ -61,7 +64,7 @@ namespace Animancer.FSM
 
             /************************************************************************************************************************/
 
-            /// <summary>Creates a new <see cref="WithDefault"/> and sets the <see cref="DefaultKey"/>.</summary>
+            /// <summary>Creates a new <see cref="StateMachine{TState}.WithDefault"/> and sets the <see cref="DefaultKey"/>.</summary>
             public WithDefault(TKey defaultKey)
                 : this()
             {

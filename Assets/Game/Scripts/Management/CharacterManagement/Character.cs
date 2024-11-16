@@ -1,6 +1,5 @@
 ﻿using Animancer;
 using Animancer.FSM;
-using Coffee.ScriptableObjects;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -11,8 +10,8 @@ namespace Coffee.Core.CharacterManagement
     [SelectionBase]
     public class Character : MonoBehaviour
     {
-        [SerializeField] private bool isPlayer = false;
-        
+        [EnumToggleButtons, HideLabel] public State state;
+
         [SerializeField] private AnimancerComponent animancer;
         public AnimancerComponent Animancer => animancer;
         
@@ -21,19 +20,14 @@ namespace Coffee.Core.CharacterManagement
 
         [SerializeField] private Brain brain;
         public Brain Brain => brain;
-
-        [SerializeField, ShowIf("@isPlayer")] private MovementStatsSO movementStats;
-        public MovementStatsSO MovementStats => movementStats;
         
-        [SerializeField, ShowIf("@isPlayer")] private SplineAnimate splineAnimate;
+        [SerializeField] private SplineAnimate splineAnimate;
         public SplineAnimate SplineAnimate => splineAnimate;
 
         public int Site;
 
         private void Awake()
         {
-            if (isPlayer)
-                MovementStats.Movement = new SmoothedFloatParameter(Animancer, MovementStats.parameterSpeed, MovementStats.smoothTime);
             stateMachine.InitializeAfterDeserialize();
         }
     }

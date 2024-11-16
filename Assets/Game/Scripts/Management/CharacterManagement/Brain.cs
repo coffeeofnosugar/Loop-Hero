@@ -1,4 +1,5 @@
 ﻿using System;
+using Animancer;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -9,25 +10,33 @@ namespace Coffee.Core.CharacterManagement
 
     public class Brain : MonoBehaviour
     {
-        [EnumToggleButtons, HideLabel] public State state;
-        
         [SerializeField] private Character character;
         [SerializeField] private CharacterState idleState;
-        [SerializeField] private CharacterState walkState;
+        [SerializeField] private CharacterState moveState;
         [SerializeField] private CharacterState attackState;
         [SerializeField] private CharacterState dieState;
+        
+        public SmoothedFloatParameter movement;
 
         private void Awake()
         {
             character.StateMachine.AddRange(
                 new [] { State.Idle, State.Walk, State.Attack, State.Die },
-                new [] { idleState, walkState, attackState, dieState });
-            character.StateMachine.ForceSetDefaultState += () => state = State.Idle;
+                new [] { idleState, moveState, attackState, dieState });
+            character.StateMachine.ForceSetDefaultState += () => character.state = State.Idle;
+            
+            StringAsset moveParameter = ScriptableObject.CreateInstance<StringAsset>();
+            moveParameter.name = "movement";
+            movement = new SmoothedFloatParameter(character.Animancer, moveParameter, 0.1f);
+            if (((MoveState)moveState)._animation.Transition is LinearMixerTransition linearMixerTransition)
+            {
+                linearMixerTransition.ParameterName = moveParameter;
+            }
         }
 
         private void Update()
         {
-            switch (state)
+            switch (character.state)
             {
                 case State.Idle:
                     character.StateMachine.TrySetDefaultState();
