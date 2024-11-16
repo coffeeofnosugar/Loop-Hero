@@ -1,14 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
-using Coffee.Core.CharacterManagement;
+using Coffee.Core.MapManagement;
 using UnityEngine;
 
-public class Hero : MonoBehaviour
+namespace Coffee.Core.CharacterManagement
 {
-    [SerializeField] private Character character;
-
-    private void Start()
+    public class Hero : MonoBehaviour
     {
-        character.state = State.Walk;
+        [SerializeField] private Character character;
+
+        private void Start()
+        {
+            character.state = State.Walk;
+        }
+
+        private void Update()
+        {
+            UpdateSite();
+        }
+
+
+        private void UpdateSite()
+        {
+            var spline = MapManager.Instance.splineContainer.Spline;
+            int nextSite = character.Site + 1 >= spline.Count ? 0 : character.Site + 1;
+            if (Vector3.SqrMagnitude(transform.position - (Vector3)spline[nextSite].Position) < .75f *.75f)
+                character.Site = nextSite;
+        }
     }
 }
