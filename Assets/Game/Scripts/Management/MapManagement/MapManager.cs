@@ -1,14 +1,17 @@
 using System.Collections.Generic;
 using Coffee.Core.CharacterManagement;
+using Coffee.Core.FightManagement;
 using Sirenix.OdinInspector;
 using Tools;
+using Tools.EventBus;
 using Tools.PoolModule;
 using UnityEngine;
 using UnityEngine.Splines;
 
 namespace Coffee.Core.MapManagement
 {
-    public class MapManager : Singleton<MapManager>
+    public class MapManager : Singleton<MapManager>,
+        IEventListener<FightEvent>
     {
         [SerializeField] private float spawnEnemyInterval = 1f;
         
@@ -28,6 +31,7 @@ namespace Coffee.Core.MapManagement
         
         private void Update()
         {
+            if (FightManager.Instance.IsFighting) return;
             if (sites.Count == 0) return;
             timer += Time.deltaTime;
             if (timer >= spawnEnemyInterval)
@@ -36,8 +40,7 @@ namespace Coffee.Core.MapManagement
                 var site = sites[Random.Range(0, sites.Count)];
                 sites.Remove(site);
                 var enemy = enemyPooler.GetPooledGameObject();
-                enemy.transform.position = splineContainer.Spline[site].Position;
-                enemy.transform.rotation = splineContainer.Spline[site].Rotation * Quaternion.Euler(0f, 180f, 0f);
+                enemy.GetComponent<SplineAnimate>().StartOffset = site/(float)(splineContainer.Spline.Count - 1);
                 enemy.GetComponent<Character>().Site = site;
                 enemy.SetActive(true);
             }
@@ -53,6 +56,11 @@ namespace Coffee.Core.MapManagement
             {
                 splineContainer.Spline.Add(_transform.GetChild(i).position, TangentMode.AutoSmooth);
             }
+        }
+
+        public void OnEvent(FightEvent animationEvent)
+        {
+            
         }
     }
 }
