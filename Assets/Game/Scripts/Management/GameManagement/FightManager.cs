@@ -1,3 +1,4 @@
+using Coffee.Core.CharacterManagement;
 using Tools;
 using Tools.EventBus;
 using UnityEngine.InputSystem;
@@ -22,10 +23,14 @@ namespace Coffee.Core.FightManagement
 
         private void Update()
         {
-            if (Keyboard.current.aKey.wasPressedThisFrame)
+            IsFightingHandler();
+        }
+
+        private void IsFightingHandler()
+        {
+            // if ()
             {
-                IsFighting = !IsFighting;
-                FightEvent.Trigger(IsFighting);
+                
             }
         }
     }

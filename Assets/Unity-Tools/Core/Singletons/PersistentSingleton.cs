@@ -11,7 +11,7 @@ namespace Tools
     /// </summary>
     public abstract class PersistentSingleton<T> : MonoBehaviour where T : Component
     {
-        [ShowInInspector, DisableInPlayMode]
+        [SerializeField, DisableInPlayMode]
         private bool automaticallyUnparentOnAwake;
         
         protected static T _instance;

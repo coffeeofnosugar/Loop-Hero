@@ -17,7 +17,7 @@ namespace Coffee.Core.CharacterManagement
             if (dissolveDealy == -1f) return;
             await UniTask.Delay(TimeSpan.FromSeconds(dissolveDealy));
             character.gameObject.SetActive(false);
-            MapManager.Instance.sites.Add(character.Site);
+            LevelManager.Instance.ResetSite(character.Site);
             character.StateMachine.ForceSetDefaultState.Invoke();
         }
     }

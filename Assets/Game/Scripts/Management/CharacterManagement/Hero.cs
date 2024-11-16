@@ -7,11 +7,7 @@ namespace Coffee.Core.CharacterManagement
     {
         [SerializeField] private Character character;
 
-        private void Start()
-        {
-            character.state = State.Walk;
-        }
-
+        
         private void Update()
         {
             UpdateSite();
@@ -20,7 +16,7 @@ namespace Coffee.Core.CharacterManagement
 
         private void UpdateSite()
         {
-            var spline = MapManager.Instance.splineContainer.Spline;
+            var spline = LevelManager.Instance.splineContainer.Spline;
             int nextSite = character.Site + 1 >= spline.Count ? 0 : character.Site + 1;
             if (Vector3.SqrMagnitude(transform.position - (Vector3)spline[nextSite].Position) < .75f *.75f)
                 character.Site = nextSite;

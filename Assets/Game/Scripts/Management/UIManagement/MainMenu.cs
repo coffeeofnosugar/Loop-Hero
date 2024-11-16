@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using Coffee.Core.FightManagement;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Coffee.Management.UIManagement
@@ -14,19 +14,19 @@ namespace Coffee.Management.UIManagement
         private void Awake()
         {
             continueButton.onClick.AddListener(Continue);
-            startButton.onClick.AddListener(StartGame);
+            startButton.onClick.AddListener(NewGame);
             settingsButton.onClick.AddListener(Settings);
             exitButton.onClick.AddListener(Exit);
         }
 
         private void Continue()
         {
-            
+            GameEvent.Trigger(GameEventTypes.ContinueGame);
         }
 
-        private void StartGame()
+        private void NewGame()
         {
-            SceneManager.LoadScene("Game");
+            GameEvent.Trigger(GameEventTypes.NewGame);
         }
 
         private void Settings()
