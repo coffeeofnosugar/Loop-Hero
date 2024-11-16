@@ -1,8 +1,6 @@
 ﻿using System;
 using Animancer;
-using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Coffee.Core.CharacterManagement
 {

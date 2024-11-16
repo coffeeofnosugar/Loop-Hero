@@ -1,7 +1,5 @@
 ﻿using Animancer;
 using Animancer.FSM;
-using Coffee.Core.FightManagement;
-using Tools.EventBus;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -10,8 +8,7 @@ namespace Coffee.Core.CharacterManagement
 {
     [DefaultExecutionOrder(-10000)]
     [SelectionBase]
-    public class Character : MonoBehaviour,
-        IEventListener<FightEvent>
+    public class Character : MonoBehaviour
     {
         [EnumToggleButtons, HideLabel] public State state;
 
@@ -36,25 +33,6 @@ namespace Coffee.Core.CharacterManagement
             {
                 SplineAnimate.Container = FindObjectOfType<SplineContainer>();
             }
-        }
-
-        private void OnEnable()
-        {
-            this.EventStartListening<FightEvent>();
-        }
-
-        private void OnDisable()
-        {
-            this.EventStopListening<FightEvent>();
-        }
-
-        public void OnEvent(FightEvent fightEvent)
-        {
-            Debug.Log("chuaf");
-            // if (fightEvent.IsEnter)
-            //     Animancer.Graph.PauseGraph();
-            // else
-            //     Animancer.Graph.UnpauseGraph();
         }
     }
 }

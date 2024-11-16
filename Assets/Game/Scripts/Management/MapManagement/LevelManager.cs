@@ -23,7 +23,8 @@ namespace Coffee.Core.MapManagement
         public SplineContainer splineContainer { get; private set; }
 
         private float timer;
-        private List<int> sites;
+        [ShowInInspector, ReadOnly] private List<int> sites;
+        public IReadOnlyList<int> Sites => sites;
 
         protected override void Awake()
         {

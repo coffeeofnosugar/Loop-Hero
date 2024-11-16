@@ -79,7 +79,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6891382586631965721, guid: 5ff69b1dba1d379429d509ebf5c54b5a,
         type: 3}
-      insertIndex: -1
+      insertIndex: 1
       addedObject: {fileID: 5117615093659754742}
   m_SourcePrefab: {fileID: 100100000, guid: 5ff69b1dba1d379429d509ebf5c54b5a, type: 3}
 --- !u!114 &1057901988104422218 stripped

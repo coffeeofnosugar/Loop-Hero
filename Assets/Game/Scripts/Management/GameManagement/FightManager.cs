@@ -1,7 +1,5 @@
-using Coffee.Core.CharacterManagement;
 using Tools;
 using Tools.EventBus;
-using UnityEngine.InputSystem;
 
 namespace Coffee.Core.FightManagement
 {
@@ -17,7 +15,8 @@ namespace Coffee.Core.FightManagement
         }
     }
 
-    public class FightManager : Singleton<FightManager>
+    public class FightManager : Singleton<FightManager>,
+        IEventListener<FightEvent>
     {
         public bool IsFighting;
 
@@ -29,6 +28,15 @@ namespace Coffee.Core.FightManagement
         private void IsFightingHandler()
         {
             // if ()
+            {
+                
+            }
+        }
+
+        public void OnEvent(FightEvent animationEvent)
+        {
+            IsFighting = animationEvent.IsEnter;
+            if (animationEvent.IsEnter)
             {
                 
             }
