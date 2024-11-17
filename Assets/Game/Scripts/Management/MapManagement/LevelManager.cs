@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Coffee.Core.CharacterManagement;
 using Coffee.Core.FightManagement;
 using Cysharp.Threading.Tasks;
@@ -8,32 +9,37 @@ using Tools.EventBus;
 using Tools.PoolModule;
 using UnityEngine;
 using UnityEngine.Splines;
-using Random = UnityEngine.Random;
 
 namespace Coffee.Core.MapManagement
 {
     public class LevelManager : Singleton<LevelManager>,
-        IEventListener<FightEvent>
+        IEventListener<EnterFightEvent>
     {
         [SerializeField] private GameObject heroReferce;
         public Character Hero { get; private set; }
         [SerializeField] private float spawnEnemyInterval = 1f;
 
-        private SimpleObjectPooler enemyPooler;
-        public SplineContainer splineContainer { get; private set; }
+        [SerializeField] private SimpleObjectPooler enemyPooler;
+        [SerializeField] public SplineContainer splineContainer;
 
         private float timer;
-        [ShowInInspector, ReadOnly] private List<int> sites;
-        public IReadOnlyList<int> Sites => sites;
+        [ShowInInspector, ReadOnly] public HashSet<int> Sites;
 
         protected override void Awake()
         {
             base.Awake();
-            enemyPooler = GetComponent<SimpleObjectPooler>();
-            splineContainer = GetComponent<SplineContainer>();
-            sites = new List<int>(splineContainer.Spline.Count);
+            Sites = new HashSet<int>(splineContainer.Spline.Count);
+            List<int> numbers = new List<int>();
             for (int i = 0; i < splineContainer.Spline.Count; i++)
-                sites.Add(i);
+            {
+                numbers.Add(i);
+            }
+            for (int i = 0; i < splineContainer.Spline.Count; i++)
+            {
+                int index = Random.Range(0, numbers.Count);
+                Sites.Add(numbers[index]);
+                numbers.RemoveAt(index);
+            }
         }
 
         public async UniTask InitLevel()
@@ -72,16 +78,20 @@ namespace Coffee.Core.MapManagement
 
         private void UpdateSpawnEnemy()
         {
+            if (Hero == null)
+                Hero = FindObjectOfType<Hero>().GetComponent<Character>();
+            
             if (FightManager.Instance.IsFighting) return;   // 如果正在战斗停止
-            if (sites.Count == 0) return;
+            if (Sites.Count == 0) return;
+            if (Sites.Count == 1 && Sites.Contains(Hero.Site)) return;
             timer += Time.deltaTime;
             if (timer >= spawnEnemyInterval)
             {
                 timer = 0;
-                var site = sites[Random.Range(0, sites.Count)];
-                sites.Remove(site);
+                int site = Sites.First(b => b != Hero.Site);
+                Sites.Remove(site);
                 var enemy = enemyPooler.GetPooledGameObject();
-                enemy.GetComponent<SplineAnimate>().StartOffset = site/(float)(splineContainer.Spline.Count - 1);
+                enemy.GetComponent<SplineAnimate>().StartOffset = site/(float)(splineContainer.Spline.Count);
                 enemy.GetComponent<Character>().Site = site;
                 enemy.SetActive(true);
             }
@@ -89,12 +99,12 @@ namespace Coffee.Core.MapManagement
 
         public void ResetSite(int site)
         {
-            sites.Add(site);
+            Sites.Add(site);
         }
 
         #endregion
 
-        public void OnEvent(FightEvent animationEvent)
+        public void OnEvent(EnterFightEvent enterFightEvent)
         {
             
         }

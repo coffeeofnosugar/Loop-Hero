@@ -3,22 +3,29 @@ using Tools.EventBus;
 
 namespace Coffee.Core.FightManagement
 {
-    public struct FightEvent
+    public struct EnterFightEvent
     {
-        public bool IsEnter;
-
-        private static FightEvent e;
-        public static void Trigger(bool isEnter)
+        private static EnterFightEvent e;
+        public static void Trigger()
         {
-            e.IsEnter = isEnter;
             EventBus.TriggerEvent(e);
         }
     }
 
     public class FightManager : Singleton<FightManager>,
-        IEventListener<FightEvent>
+        IEventListener<EnterFightEvent>
     {
         public bool IsFighting;
+        
+        private void OnEnable()
+        {
+            this.EventStartListening<EnterFightEvent>();
+        }
+        
+        private void OnDisable()
+        {
+            this.EventStopListening<EnterFightEvent>();
+        }
 
         private void Update()
         {
@@ -33,13 +40,9 @@ namespace Coffee.Core.FightManagement
             }
         }
 
-        public void OnEvent(FightEvent animationEvent)
+        public void OnEvent(EnterFightEvent enterFightEvent)
         {
-            IsFighting = animationEvent.IsEnter;
-            if (animationEvent.IsEnter)
-            {
-                
-            }
+            IsFighting = true;
         }
     }
 }

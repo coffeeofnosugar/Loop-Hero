@@ -1,4 +1,3 @@
-using System.Linq;
 using Coffee.Core.FightManagement;
 using Coffee.Core.MapManagement;
 using Sirenix.OdinInspector;
@@ -8,9 +7,15 @@ namespace Coffee.Core.CharacterManagement
 {
     public class Hero : MonoBehaviour
     {
-        public Character character;
         [ShowInInspector, ReadOnly] public bool isFighting => FightManager.Instance.IsFighting;
-        
+        [SerializeField] private Character character;
+        [SerializeField] private GameObject fightCamera;
+
+        private void Awake()
+        {
+            fightCamera.SetActive(false);
+        }
+
         private void Update()
         {
             UpdateSite();
@@ -30,8 +35,9 @@ namespace Coffee.Core.CharacterManagement
         {
             if (!LevelManager.Instance.Sites.Contains(character.Site) && !isFighting)
             {
-                FightEvent.Trigger(true);
+                EnterFightEvent.Trigger();
                 character.state = State.Idle;
+                fightCamera.SetActive(true);
             }
         }
     }

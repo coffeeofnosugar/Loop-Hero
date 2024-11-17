@@ -16,12 +16,25 @@ namespace Editor
         [SceneObjectsOnly, Required]
         [SerializeField] private GameObject targetObj;
         
-        [Button]
+        [Button(ButtonSizes.Gigantic)]
         private void DeleteInactiveChild()
         {
             if (targetObj == null) return;
 
             DeleteInactiveChild(targetObj);
+        }
+
+        [SerializeField]
+        private string SortName;
+        [Button(ButtonSizes.Gigantic)]
+        private void SortChild()
+        {
+            if (targetObj == null) return;
+            for (int i = 0; i < targetObj.transform.childCount; i++)
+            {
+                GameObject child = targetObj.transform.GetChild(i).gameObject;
+                child.name = $"{SortName}-{i}";
+            }
         }
         
         private void DeleteInactiveChild(GameObject obj)

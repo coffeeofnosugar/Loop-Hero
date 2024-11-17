@@ -32,6 +32,7 @@ MonoBehaviour:
     assemblyNames:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
+    - Cinemachine
     - Kybernetik.Animancer
     - Kybernetik.Animancer.FSM
     - SingularityGroup.HotReload.Runtime

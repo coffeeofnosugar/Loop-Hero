@@ -48,9 +48,9 @@ namespace Coffee.Core.FightManagement
             this.EventStopListening<GameEvent>();
         }
 
-        public void OnEvent(GameEvent gameEvent)
+        public void OnEvent(GameEvent fightEvent)
         {
-            switch (gameEvent.EventType)
+            switch (fightEvent.EventType)
             {
                 case GameEventTypes.ContinueGame:
                     // LevelManager.Instance.ContinueGame();

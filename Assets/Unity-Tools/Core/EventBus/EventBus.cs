@@ -8,7 +8,7 @@ namespace Tools.EventBus
 
     public interface IEventListener<T> : IEventListenerBase
     {
-        void OnEvent(T animationEvent);
+        void OnEvent(T fightEvent);
     }
 
     public static class EventRegister
