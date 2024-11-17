@@ -17,6 +17,7 @@ namespace Coffee.Core.Management.UIManagement
 
         public override void Initialized()
         {
+            healthSlider.Initialized();
             healthSlider.UpdateBar(LevelManager.Instance.Hero.Data.health, LevelManager.Instance.Hero.Config.MaxHealth);
             levelText.text = ((HeroData)LevelManager.Instance.Hero.Data).Level.ToString();
             expSlider.value = ((HeroData)LevelManager.Instance.Hero.Data).Experience;

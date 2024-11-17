@@ -19,10 +19,10 @@ public class HealthBar : MonoBehaviour
     
     private DOGetter<float> _valueGetter;
     private DOSetter<float> _valueSetter;
-    private float _currentValue;
-    private float _maxValue;
-
-    private void Awake()
+    [SerializeField] private float _currentValue;
+    [SerializeField] private float _maxValue;
+    
+    public void Initialized()
     {
         _valueGetter = () => _currentValue;
         _valueSetter = (newValue) =>
@@ -33,18 +33,25 @@ public class HealthBar : MonoBehaviour
         };
     }
 
-    public void UpdateBar(float currentValue, float maxValue)
+    public void UpdateBar(float newValue, float maxValue, bool immediately = true)
     {
         _maxValue = maxValue;
-        UpdateBar(currentValue);
+        UpdateBar(newValue, immediately);
     }
 
-    public void UpdateBar(float currentValue)
+    public void UpdateBar(float newValue, bool immediately = false)
     {
-        _textMeshPro.GetComponent<RectTransform>().DOShakePosition(upBarSpeed, 5f);
-        DOTween.To(_valueGetter, _valueSetter, currentValue, upBarSpeed).OnComplete(() =>
+        if (immediately)
+        {
+            _valueSetter(newValue);
+        }
+        else
+        {
+            _textMeshPro.GetComponent<RectTransform>().DOShakePosition(upBarSpeed, 5f);
+            DOTween.To(_valueGetter, _valueSetter, newValue, upBarSpeed).OnComplete(() =>
             {
-                downBar.DOSizeDelta(new Vector2(currentValue / _maxValue * background.rect.width, 0f), downBarSpeed);
+                downBar.DOSizeDelta(new Vector2(newValue / _maxValue * background.rect.width, 0f), downBarSpeed);
             });
+        }
     }
 }
