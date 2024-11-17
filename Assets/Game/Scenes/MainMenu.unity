@@ -415,6 +415,11 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2029499684160536183, guid: 3b57787e15e9d40aca7b77c7f76ef0a5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 44.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2029499684733480864, guid: 3b57787e15e9d40aca7b77c7f76ef0a5,
         type: 3}
       propertyPath: m_Value

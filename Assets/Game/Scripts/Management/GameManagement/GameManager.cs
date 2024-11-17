@@ -4,9 +4,6 @@ using Coffee.Management.UIManagement;
 using Cysharp.Threading.Tasks;
 using Tools;
 using Tools.EventBus;
-using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 namespace Coffee.Core.FightManagement
 {
