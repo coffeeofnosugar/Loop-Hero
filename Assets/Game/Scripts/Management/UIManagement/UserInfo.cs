@@ -1,23 +1,26 @@
-﻿using System;
-using Coffee.Core.CharacterManagement;
+﻿using Coffee.Core.CharacterManagement;
+using Coffee.Core.MapManagement;
+using DG.Tweening;
 using TMPro;
+using Tools;
 using Tools.EventBus;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Coffee.Management.UIManagement
 {
-    public class UserInfo : MonoBehaviour,
+    public class UserInfo : Singleton<UserInfo>,
         IEventListener<LevelUpEvent>
     {
-        [SerializeField] private HealthBar healthSlider;
+        public HealthBar healthSlider;
         [SerializeField] private Slider expSlider;
         [SerializeField] private TextMeshProUGUI levelText;
 
-        private void Awake()
+        public void Initialized()
         {
-            // healthSlider.Initialized();
-            expSlider.value = 0;
+            healthSlider.UpdateBar(LevelManager.Instance.Hero.Data.health, LevelManager.Instance.Hero.Config.MaxHealth);
+            levelText.text = ((HeroData)LevelManager.Instance.Hero.Data).Level.ToString();
+            expSlider.value = ((HeroData)LevelManager.Instance.Hero.Data).Experience;
         }
 
         private void OnEnable()
@@ -30,14 +33,16 @@ namespace Coffee.Management.UIManagement
             this.EventStopListening<LevelUpEvent>();
         }
         
-        
-        
-        
-
-
         public void OnEvent(LevelUpEvent eventType)
         {
             levelText.text = eventType.Level.ToString();
+        }
+
+
+        public void UpdateLevelText()
+        {
+            levelText.text = ((HeroData)LevelManager.Instance.Hero.Data).Level.ToString();
+            levelText.transform.DOShakePosition(.2f, 5f);
         }
     }
 }

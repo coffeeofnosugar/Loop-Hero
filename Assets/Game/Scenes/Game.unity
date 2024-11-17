@@ -1847,7 +1847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MutualizeWaitingPools: 0
   NestWaitingPool: 1
-  NestUnderThis: 1
+  NestUnderThis: 0
   _objectPool: {fileID: 0}
   GameObjectToPool: {fileID: 6261846850789963789, guid: 2ec08b425691fd14184acd4cdef06f57,
     type: 3}
@@ -2347,6 +2347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroReferce: {fileID: 5117615093659754742, guid: 22f41833a70d92d4ab391dcb394a5df0,
     type: 3}
+  Hero: {fileID: 0}
   spawnEnemyInterval: 1
   enemyPooler: {fileID: 1245534479}
   splineContainer: {fileID: 1245534480}
@@ -2785,9 +2786,9 @@ Canvas:
   m_GameObject: {fileID: 1523749005}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 330585545}
+  m_PlaneDistance: 2
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -3384,7 +3385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 65.76256, y: 41.163116}
+  m_AnchoredPosition: {x: 65.76254, y: 41.163116}
   m_SizeDelta: {x: -173.3378, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2764851251441986871
@@ -4209,7 +4210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 47.990067, y: 1.6130676}
+  m_AnchoredPosition: {x: 47.99008, y: 1.6130676}
   m_SizeDelta: {x: -223.4137, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4519582825946996175

@@ -904,7 +904,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2073490031382135071, guid: 5ff69b1dba1d379429d509ebf5c54b5a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3638564580348594621, guid: 5ff69b1dba1d379429d509ebf5c54b5a,
@@ -978,7 +979,6 @@ MonoBehaviour:
     _CurrentState: {fileID: 5886562003108861189}
     _CurrentKey: 0
     _DefaultKey: 0
-  Brain: {fileID: 7077177119658129051}
   SplineAnimate: {fileID: 4149087782628727400}
   Site: 0
   fightCamera: {fileID: 8348510711350932313}
@@ -993,17 +993,5 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4e9d639559b4234b3a0cfd5ce191314, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7077177119658129051 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8097409914328249550, guid: 5ff69b1dba1d379429d509ebf5c54b5a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1326565667892904533}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa44683b2d084d2d8f8c2d2aa2decaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

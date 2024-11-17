@@ -20,7 +20,7 @@ namespace Coffee.Core.CharacterManagement
         public SplineAnimate SplineAnimate;
         public int Site;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             Initialized();
             StateMachine.InitializeAfterDeserialize();
@@ -30,10 +30,7 @@ namespace Coffee.Core.CharacterManagement
 
         protected virtual void Initialized()
         {
-            Data = new()
-            {
-                health = Config.MaxHealth,
-            };
+            Data.health = Config.MaxHealth;
         }
     }
 }

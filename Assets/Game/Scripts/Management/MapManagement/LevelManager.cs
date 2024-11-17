@@ -2,8 +2,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Coffee.Core.CharacterManagement;
 using Coffee.Core.FightManagement;
+using Coffee.Management.UIManagement;
+using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using Tools;
+using Tools.EventBus;
 using Tools.PoolModule;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -11,15 +14,10 @@ using Random = UnityEngine.Random;
 
 namespace Coffee.Core.MapManagement
 {
-    public struct LoadLevelEvent
-    {
-        
-    }
-    
     public class LevelManager : Singleton<LevelManager>
     {
         [SerializeField] private Hero heroReferce;
-        public Hero Hero { get; private set; }
+        public Hero Hero;
         [SerializeField] private float spawnEnemyInterval = 1f;
 
         public SimpleObjectPooler enemyPooler;
@@ -31,6 +29,11 @@ namespace Coffee.Core.MapManagement
         protected override void Awake()
         {
             base.Awake();
+            Initialized();
+        }
+
+        private void Initialized()
+        {
             Sites = new HashSet<int>(splineContainer.Spline.Count);
             List<int> numbers = new List<int>();
             for (int i = 0; i < splineContainer.Spline.Count; i++)
@@ -44,11 +47,7 @@ namespace Coffee.Core.MapManagement
                 numbers.RemoveAt(index);
             }
             Hero = Instantiate(heroReferce);
-        }
-
-        public void LevelEnd()
-        {
-            enabled = false;
+            UserInfo.Instance.Initialized();
         }
 
         [Button(ButtonSizes.Gigantic)]
@@ -56,6 +55,11 @@ namespace Coffee.Core.MapManagement
         {
             Hero.state = State.Walk;
             enabled = true;
+        }
+        
+        public void LevelEnd()
+        {
+            enabled = false;
         }
         
         private void Update()

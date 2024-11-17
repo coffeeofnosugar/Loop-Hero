@@ -33,7 +33,7 @@ public class HealthBar : MonoBehaviour
         };
     }
 
-    public void Initialized(float currentValue, float maxValue)
+    public void UpdateBar(float currentValue, float maxValue)
     {
         _maxValue = maxValue;
         UpdateBar(currentValue);
