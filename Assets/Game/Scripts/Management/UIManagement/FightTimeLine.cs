@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Coffee.Core.Management.UIManagement
 {
-    public class FightTimeLine : BaseUI
+    public class FightTimeLine : UIBase
     {
         [SerializeField] private RectTransform timeLine;
         [SerializeField] private RectTransform heroIcon;

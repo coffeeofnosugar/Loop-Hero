@@ -8,7 +8,6 @@ using DG.Tweening;
 using Sirenix.OdinInspector;
 using Tools;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Coffee.Core.FightManagement
 {
@@ -50,13 +49,14 @@ namespace Coffee.Core.FightManagement
                 }
                 else
                 {
-                    // pooledGame.SetActive(false);
+                    pooledGame.SetActive(false);
                     hideEnemies.Add(pooledGame);
                 }
             }
 
             fightEnemy.transform.DOMove(Hero.fightPoint.position, .5f).ToUniTask().Forget();
             fightEnemy.transform.DOLookAt(Hero.transform.position, .5f).ToUniTask().Forget();
+            UIManager.ShowUI<FightTimeLine>(true, 1f).Initialized();
             // 等待摄像机停止移动
             while (true)
             {
@@ -72,7 +72,6 @@ namespace Coffee.Core.FightManagement
             timerHero = 0f;
             timerEnemy = 0f;
             StartFighting = true;
-            UIManager.GetUI<FightTimeLine>().Show().Initialized();
         }
 
         #region Fighting

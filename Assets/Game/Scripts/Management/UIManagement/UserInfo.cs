@@ -2,14 +2,13 @@
 using Coffee.Core.MapManagement;
 using DG.Tweening;
 using TMPro;
-using Tools;
 using Tools.EventBus;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Coffee.Core.Management.UIManagement
 {
-    public class UserInfo : BaseUI,
+    public class UserInfo : UIBase,
         IEventListener<LevelUpEvent>
     {
         public HealthBar healthSlider;
