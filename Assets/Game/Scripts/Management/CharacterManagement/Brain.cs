@@ -13,8 +13,6 @@ namespace Coffee.Core.CharacterManagement
         [SerializeField] private CharacterState moveState;
         [SerializeField] private CharacterState attackState;
         [SerializeField] private CharacterState dieState;
-        
-        public SmoothedFloatParameter movement;
 
         private void Awake()
         {
@@ -22,14 +20,6 @@ namespace Coffee.Core.CharacterManagement
                 new [] { State.Idle, State.Walk, State.Attack, State.Die },
                 new [] { idleState, moveState, attackState, dieState });
             character.StateMachine.ForceSetDefaultState += () => character.state = State.Idle;
-            
-            StringAsset moveParameter = ScriptableObject.CreateInstance<StringAsset>();
-            moveParameter.name = "movement";
-            movement = new SmoothedFloatParameter(character.Animancer, moveParameter, 0.1f);
-            if (((MoveState)moveState)._animation.Transition is LinearMixerTransition linearMixerTransition)
-            {
-                linearMixerTransition.ParameterName = moveParameter;
-            }
         }
 
         private void Update()

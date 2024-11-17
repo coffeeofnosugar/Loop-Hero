@@ -17,7 +17,6 @@ namespace Coffee.Core.CharacterManagement
         public CharacterConfig Config;
         public AnimancerComponent Animancer;
         public StateMachine<State, CharacterState>.WithDefault StateMachine;
-        public Brain Brain;
         public SplineAnimate SplineAnimate;
         public int Site;
 
