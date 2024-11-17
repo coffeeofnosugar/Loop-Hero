@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 using DG.Tweening;
 using Tools;
 using UnityEngine;
@@ -17,20 +17,37 @@ namespace Coffee.Core.Management.UIManagement
         }
     }
 
+    [DefaultExecutionOrder(-10000)]
     public class UIManager : Singleton<UIManager>
     {
-        [SerializeField] private UIBase[] uiElements;
+        private Dictionary<string, UIBase> uiElements;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            Init();
+        }
+
+        private void Init()
+        {
+            UIBase[] uis = GetComponentsInChildren<UIBase>();
+            uiElements = new Dictionary<string, UIBase>(uis.Length);
+            foreach (var ui in uis)
+            {
+                uiElements.Add(ui.GetType().Name, ui);
+            }
+        }
         
         public static T GetUI<T>() where T : UIBase
         {
-            var ui = Instance.uiElements.First(ui => ui.GetType() == typeof(T)) as T;
+            var ui = Instance.uiElements[typeof(T).Name] as T;
             Debug.Assert(ui.gameObject.activeInHierarchy, $"{typeof(T)} 未激活");
             return ui;
         }
         
-        public static T ShowUI<T>(bool withAnim = false, float duration = .2f) where T : UIBase
+        public static T ShowUI<T>(bool withAnim = true, float duration = .2f) where T : UIBase
         {
-            T ui = Instance.uiElements.First(ui => ui.GetType() == typeof(T)) as T;
+            var ui = Instance.uiElements[typeof(T).Name] as T;
             ui.gameObject.SetActive(true);
             if (withAnim)
             {
@@ -41,9 +58,9 @@ namespace Coffee.Core.Management.UIManagement
             return ui;
         }
         
-        public static T HideUI<T>(bool withAnim = false, float duration = 1f) where T : UIBase
+        public static T HideUI<T>(bool withAnim = true, float duration = 1f) where T : UIBase
         {
-            T ui = Instance.uiElements.First(ui => ui.GetType() == typeof(T)) as T;
+            var ui = Instance.uiElements[typeof(T).Name] as T;
             if (withAnim)
             {
                 var canvasGroup = ui.GetComponent<CanvasGroup>();
@@ -55,11 +72,6 @@ namespace Coffee.Core.Management.UIManagement
                 ui.gameObject.SetActive(false);
             }
             return ui;
-        }
-
-        private void OnValidate()
-        {
-            uiElements = GetComponentsInChildren<UIBase>();
         }
     }
 }

@@ -56,7 +56,7 @@ namespace Coffee.Core.FightManagement
 
             fightEnemy.transform.DOMove(Hero.fightPoint.position, .5f).ToUniTask().Forget();
             fightEnemy.transform.DOLookAt(Hero.transform.position, .5f).ToUniTask().Forget();
-            UIManager.ShowUI<FightTimeLine>(true, 1f).Initialized();
+            UIManager.ShowUI<FightTimeLine>().Initialized();
             // 等待摄像机停止移动
             while (true)
             {
