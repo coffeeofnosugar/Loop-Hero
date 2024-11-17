@@ -43,5 +43,10 @@ namespace Coffee.Core.CharacterManagement
             if (Vector3.SqrMagnitude(transform.position - (Vector3)spline[nextSite].Position) < .75f *.75f)
                 Site = nextSite;
         }
+
+        protected override void Initialized()
+        {
+            base.Initialized();
+        }
     }
 }

@@ -11,9 +11,14 @@ using Random = UnityEngine.Random;
 
 namespace Coffee.Core.MapManagement
 {
+    public struct LoadLevelEvent
+    {
+        
+    }
+    
     public class LevelManager : Singleton<LevelManager>
     {
-        [SerializeField] private GameObject heroReferce;
+        [SerializeField] private Hero heroReferce;
         public Hero Hero { get; private set; }
         [SerializeField] private float spawnEnemyInterval = 1f;
 
@@ -38,7 +43,7 @@ namespace Coffee.Core.MapManagement
                 Sites.Add(numbers[index]);
                 numbers.RemoveAt(index);
             }
-            Hero = Instantiate(heroReferce).GetComponent<Hero>();
+            Hero = Instantiate(heroReferce);
         }
 
         public void LevelEnd()
