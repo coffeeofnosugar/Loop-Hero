@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 
@@ -11,10 +12,6 @@ namespace Coffee.Core.Management.UIManagement
         
         [SerializeField] private float multiplier = 1f;
         
-        private void Awake()
-        {
-            Initialized();
-        }
 
         public override void Initialized()
         {
@@ -23,6 +20,7 @@ namespace Coffee.Core.Management.UIManagement
             enemyIcon.anchoredPosition = new Vector2(0f, enemyIcon.anchoredPosition.y);
         }
         
+        [Button]
         public void UpdateHeroIcon(float progress)
         {
             heroIcon.anchoredPosition = new Vector2(progress * multiplier, heroIcon.anchoredPosition.y);

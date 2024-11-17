@@ -1,14 +1,21 @@
-﻿using System;
-using System.Linq;
-using Sirenix.OdinInspector;
+﻿using System.Linq;
 using Tools;
 using UnityEngine;
 
 namespace Coffee.Core.Management.UIManagement
 {
+    [RequireComponent(typeof(CanvasGroup))]
     public abstract class BaseUI : MonoBehaviour
     {
+        [SerializeField] private bool _awakeActive;      // 是否在Awake时激活
         public virtual void Initialized() {  }
+        public virtual BaseUI Show() { gameObject.SetActive(true); return this; }
+        public virtual BaseUI Hide() { gameObject.SetActive(false); return this; }
+        
+        protected virtual void Awake()
+        {
+            if (_awakeActive) Show(); else Hide();
+        }
     }
 
     public class UIManager : Singleton<UIManager>

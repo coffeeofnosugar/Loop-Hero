@@ -1,12 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using Coffee.Core.CharacterManagement;
+using Coffee.Core.Management.UIManagement;
 using Coffee.Core.MapManagement;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using Tools;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Coffee.Core.FightManagement
 {
@@ -53,8 +55,8 @@ namespace Coffee.Core.FightManagement
                 }
             }
 
-            fightEnemy.transform.DOMove(Hero.fightPoint.position, .5f);
-            fightEnemy.transform.DOLookAt(Hero.transform.position, .5f);
+            fightEnemy.transform.DOMove(Hero.fightPoint.position, .5f).ToUniTask().Forget();
+            fightEnemy.transform.DOLookAt(Hero.transform.position, .5f).ToUniTask().Forget();
             // 等待摄像机停止移动
             while (true)
             {
@@ -67,35 +69,38 @@ namespace Coffee.Core.FightManagement
             }
             
             Debug.Log("Fight Start");
-            timerHero = totle;
-            timerEnemy = totle;
+            timerHero = 0f;
+            timerEnemy = 0f;
             StartFighting = true;
+            UIManager.GetUI<FightTimeLine>().Show().Initialized();
         }
 
         #region Fighting
 
         
         
-        public float totle = 100;
+        public float total = 100f;
         public float timerHero;
         public float timerEnemy;
         
         private void FightingHandler()
         {
             if (!IsFighting || !StartFighting) return;
-            timerHero -= Time.deltaTime * Hero.Data.attackSpeed;
-            timerEnemy -= Time.deltaTime * fightEnemy.Data.attackSpeed;
+            timerHero += Time.deltaTime * Hero.Data.attackSpeed;
+            timerEnemy += Time.deltaTime * fightEnemy.Data.attackSpeed;
+            UIManager.GetUI<FightTimeLine>().UpdateHeroIcon(timerHero);
+            UIManager.GetUI<FightTimeLine>().UpdateEnemyIcon(timerEnemy);
 
-            if (timerHero <= 0)
+            if (timerHero >= total)
             {
                 Hero.state = State.Attack;
-                timerHero = totle;
+                timerHero = 0f;
             }
 
-            if (timerEnemy <= 0)
+            if (timerEnemy >= total)
             {
                 fightEnemy.state = State.Attack;
-                timerEnemy = totle;
+                timerEnemy = 0f;
             }
         }
 
