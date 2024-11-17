@@ -55,9 +55,9 @@ namespace Coffee.Core.FightManagement
                 case GameEventTypes.NewGame:
                     LoadManager.Instance.LoadGameScene().Forget();
                     break;
-                case GameEventTypes.LevelStart:
-                    LevelManager.Instance.InitLevel().Forget();
-                    break;
+                // case GameEventTypes.LevelStart:
+                //     LevelManager.Instance.InitLevel().Forget();
+                    // break;
                 case GameEventTypes.LevelEnd:
                     LevelManager.Instance.LevelEnd();
                     break;

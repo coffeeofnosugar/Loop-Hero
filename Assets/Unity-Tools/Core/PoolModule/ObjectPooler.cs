@@ -20,7 +20,7 @@ namespace Tools.PoolModule
         [ShowIf("NestWaitingPool"), DisableIf("MutualizeWaitingPools"), DisableInPlayMode]
         public bool NestUnderThis = false;
         protected GameObject _waitingPool;
-        protected ObjectPool _objectPool;
+        public ObjectPool _objectPool;
         protected const int _initialCapacity = 5;
         
         public static List<ObjectPool> _pools = new List<ObjectPool>(_initialCapacity);

@@ -1,5 +1,11 @@
+using System.Collections.Generic;
+using System.Linq;
+using Coffee.Core.CharacterManagement;
+using Coffee.Core.MapManagement;
+using Sirenix.OdinInspector;
 using Tools;
 using Tools.EventBus;
+using UnityEngine;
 
 namespace Coffee.Core.FightManagement
 {
@@ -12,21 +18,15 @@ namespace Coffee.Core.FightManagement
         }
     }
 
-    public class FightManager : Singleton<FightManager>,
-        IEventListener<EnterFightEvent>
+    public class FightManager : Singleton<FightManager>
     {
         public bool IsFighting;
-        
-        private void OnEnable()
-        {
-            this.EventStartListening<EnterFightEvent>();
-        }
-        
-        private void OnDisable()
-        {
-            this.EventStopListening<EnterFightEvent>();
-        }
+        private Hero Hero => LevelManager.Instance.Hero;
 
+        [ReadOnly] public Character fightEnemy;
+        [ReadOnly] public List<GameObject> hideEnemies;
+        
+        
         private void Update()
         {
             IsFightingHandler();
@@ -34,15 +34,27 @@ namespace Coffee.Core.FightManagement
 
         private void IsFightingHandler()
         {
-            // if ()
+            if (!LevelManager.Instance.Sites.Contains(Hero.Site) && !IsFighting)
             {
-                
+                EnterFightEvent.Trigger();
+                Hero.state = State.Idle;
+                Hero.fightCamera.SetActive(true);
             }
         }
 
-        public void OnEvent(EnterFightEvent enterFightEvent)
+        public void EnterFight(int heroSite, List<GameObject> pooledGameObjects)
         {
             IsFighting = true;
+            foreach (GameObject pooledGame in pooledGameObjects.Where(pooledGame => pooledGame.activeInHierarchy))
+            {
+                if (pooledGame.TryGetComponent(out Character character) && character.Site == heroSite)
+                    fightEnemy = character;
+                else
+                {
+                    pooledGame.SetActive(false);
+                    hideEnemies.Add(pooledGame);
+                }
+            }
         }
     }
 }

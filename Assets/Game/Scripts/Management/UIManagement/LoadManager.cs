@@ -25,32 +25,16 @@ namespace Coffee.Management.UIManagement
         {
             panel.SetActive(true);
             slider.value = 0;
-            float sceneLoadWeight = .7f;
-            float levelStartWeight = .3f;
-            
-            float totalProgress = 0f;
             
             AsyncOperation sceneLoadTask = SceneManager.LoadSceneAsync("Game");
 
             while (!sceneLoadTask.isDone)
             {
-                float sceneProgress = sceneLoadTask.progress;
-                totalProgress = sceneProgress * sceneLoadWeight;
-                UpdateProgressBar(totalProgress);
+                UpdateProgressBar(sceneLoadTask.progress);
                 if (sceneLoadTask.progress >= .9f)
-                    sceneLoadTask.allowSceneActivation = true;
-                await UniTask.Yield();
-            }
-
-            UniTask levelStartTask = LevelManager.Instance.InitLevel();
-            while (true)
-            {
-                if (levelStartTask.AsValueTask().IsCompleted)
                 {
-                    float levelStartProgress = 1f;
-                    totalProgress = sceneLoadWeight + levelStartProgress * levelStartWeight;
-                    UpdateProgressBar(totalProgress);
-                    break;
+                    UpdateProgressBar(1f);
+                    sceneLoadTask.allowSceneActivation = true;
                 }
                 await UniTask.Yield();
             }

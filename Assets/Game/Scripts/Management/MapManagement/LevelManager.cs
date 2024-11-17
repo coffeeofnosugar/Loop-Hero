@@ -2,25 +2,23 @@ using System.Collections.Generic;
 using System.Linq;
 using Coffee.Core.CharacterManagement;
 using Coffee.Core.FightManagement;
-using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using Tools;
-using Tools.EventBus;
 using Tools.PoolModule;
 using UnityEngine;
 using UnityEngine.Splines;
+using Random = UnityEngine.Random;
 
 namespace Coffee.Core.MapManagement
 {
-    public class LevelManager : Singleton<LevelManager>,
-        IEventListener<EnterFightEvent>
+    public class LevelManager : Singleton<LevelManager>
     {
         [SerializeField] private GameObject heroReferce;
-        public Character Hero { get; private set; }
+        public Hero Hero { get; private set; }
         [SerializeField] private float spawnEnemyInterval = 1f;
 
-        [SerializeField] private SimpleObjectPooler enemyPooler;
-        [SerializeField] public SplineContainer splineContainer;
+        public SimpleObjectPooler enemyPooler;
+        public SplineContainer splineContainer;
 
         private float timer;
         [ShowInInspector, ReadOnly] public HashSet<int> Sites;
@@ -40,11 +38,7 @@ namespace Coffee.Core.MapManagement
                 Sites.Add(numbers[index]);
                 numbers.RemoveAt(index);
             }
-        }
-
-        public async UniTask InitLevel()
-        {
-            await SpawnHero();
+            Hero = Instantiate(heroReferce).GetComponent<Hero>();
         }
 
         public void LevelEnd()
@@ -64,22 +58,12 @@ namespace Coffee.Core.MapManagement
             UpdateSpawnEnemy();
         }
 
-        #region Hero
-
-        private async UniTask SpawnHero()
-        {
-            GameObject[] obj = await InstantiateAsync(heroReferce).ToUniTask();
-            Hero = obj[0].GetComponent<Character>();
-        }
-
-        #endregion
-
         #region Enemy
 
         private void UpdateSpawnEnemy()
         {
             if (Hero == null)
-                Hero = FindObjectOfType<Hero>().GetComponent<Character>();
+                Hero = FindObjectOfType<Hero>();
             
             if (FightManager.Instance.IsFighting) return;   // 如果正在战斗停止
             if (Sites.Count == 0) return;
@@ -103,11 +87,6 @@ namespace Coffee.Core.MapManagement
         }
 
         #endregion
-
-        public void OnEvent(EnterFightEvent enterFightEvent)
-        {
-            
-        }
 
         [Button(ButtonSizes.Gigantic)]
         private void Refresh()
