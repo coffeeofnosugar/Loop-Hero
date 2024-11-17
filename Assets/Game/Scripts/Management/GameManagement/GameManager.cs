@@ -1,6 +1,6 @@
 ﻿using System;
 using Coffee.Core.MapManagement;
-using Coffee.Management.UIManagement;
+using Coffee.Core.Management.UIManagement;
 using Cysharp.Threading.Tasks;
 using Tools;
 using Tools.EventBus;

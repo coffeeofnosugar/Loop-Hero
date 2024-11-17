@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Coffee.Core.CharacterManagement;
 using Coffee.Core.FightManagement;
-using Coffee.Management.UIManagement;
+using Coffee.Core.Management.UIManagement;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using Tools;
@@ -47,7 +47,7 @@ namespace Coffee.Core.MapManagement
                 numbers.RemoveAt(index);
             }
             Hero = Instantiate(heroReferce);
-            UserInfo.Instance.Initialized();
+            UIManager.GetUI<UserInfo>().Initialized();
         }
 
         [Button(ButtonSizes.Gigantic)]

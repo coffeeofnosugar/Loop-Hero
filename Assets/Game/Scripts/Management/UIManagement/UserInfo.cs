@@ -7,16 +7,16 @@ using Tools.EventBus;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Coffee.Management.UIManagement
+namespace Coffee.Core.Management.UIManagement
 {
-    public class UserInfo : Singleton<UserInfo>,
+    public class UserInfo : BaseUI,
         IEventListener<LevelUpEvent>
     {
         public HealthBar healthSlider;
         [SerializeField] private Slider expSlider;
         [SerializeField] private TextMeshProUGUI levelText;
 
-        public void Initialized()
+        public override void Initialized()
         {
             healthSlider.UpdateBar(LevelManager.Instance.Hero.Data.health, LevelManager.Instance.Hero.Config.MaxHealth);
             levelText.text = ((HeroData)LevelManager.Instance.Hero.Data).Level.ToString();

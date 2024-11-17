@@ -37,6 +37,7 @@ namespace Coffee.Core.CharacterManagement
             Data = new HeroData()
             {
                 health = Config.MaxHealth,
+                attackSpeed = Config.AttackBaseSpeed,
                 Level = 1,
                 Experience = 0
             };

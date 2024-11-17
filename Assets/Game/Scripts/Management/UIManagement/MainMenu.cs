@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Coffee.Management.UIManagement
+namespace Coffee.Core.Management.UIManagement
 {
     public class MainMenu : MonoBehaviour
     {

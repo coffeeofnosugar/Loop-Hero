@@ -13,6 +13,7 @@ namespace Coffee.Core.FightManagement
     public class FightManager : Singleton<FightManager>
     {
         public bool IsFighting;
+        public bool StartFighting;
         private Hero Hero => LevelManager.Instance.Hero;
 
         [ReadOnly] public Character fightEnemy;
@@ -21,10 +22,11 @@ namespace Coffee.Core.FightManagement
         
         private void Update()
         {
-            IsFightingHandler();
+            IsFightHandler();
+            FightingHandler();
         }
 
-        private void IsFightingHandler()
+        private void IsFightHandler()
         {
             if (!LevelManager.Instance.Sites.Contains(Hero.Site) && !IsFighting)
             {
@@ -32,11 +34,12 @@ namespace Coffee.Core.FightManagement
             }
         }
 
-        public async UniTask EnterFight(List<GameObject> pooledGameObjects)
+        private async UniTask EnterFight(List<GameObject> pooledGameObjects)
         {
             IsFighting = true;
             Hero.state = State.Idle;
             Hero.fightCamera.SetActive(true);
+            // 隐藏其他敌人
             foreach (GameObject pooledGame in pooledGameObjects.Where(pooledGame => pooledGame.activeInHierarchy))
             {
                 if (pooledGame.TryGetComponent(out Character character) && character.Site == Hero.Site)
@@ -45,7 +48,7 @@ namespace Coffee.Core.FightManagement
                 }
                 else
                 {
-                    pooledGame.SetActive(false);
+                    // pooledGame.SetActive(false);
                     hideEnemies.Add(pooledGame);
                 }
             }
@@ -64,6 +67,38 @@ namespace Coffee.Core.FightManagement
             }
             
             Debug.Log("Fight Start");
+            timerHero = totle;
+            timerEnemy = totle;
+            StartFighting = true;
         }
+
+        #region Fighting
+
+        
+        
+        public float totle = 100;
+        public float timerHero;
+        public float timerEnemy;
+        
+        private void FightingHandler()
+        {
+            if (!IsFighting || !StartFighting) return;
+            timerHero -= Time.deltaTime * Hero.Data.attackSpeed;
+            timerEnemy -= Time.deltaTime * fightEnemy.Data.attackSpeed;
+
+            if (timerHero <= 0)
+            {
+                Hero.state = State.Attack;
+                timerHero = totle;
+            }
+
+            if (timerEnemy <= 0)
+            {
+                fightEnemy.state = State.Attack;
+                timerEnemy = totle;
+            }
+        }
+
+        #endregion
     }
 }

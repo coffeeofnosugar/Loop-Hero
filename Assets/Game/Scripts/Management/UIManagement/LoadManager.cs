@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Coffee.Management.UIManagement
+namespace Coffee.Core.Management.UIManagement
 {
     public class LoadManager : PersistentSingleton<LoadManager>
     {

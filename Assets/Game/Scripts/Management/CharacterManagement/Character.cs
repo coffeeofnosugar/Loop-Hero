@@ -31,6 +31,7 @@ namespace Coffee.Core.CharacterManagement
         protected virtual void Initialized()
         {
             Data.health = Config.MaxHealth;
+            Data.attackSpeed = Config.AttackBaseSpeed;
         }
     }
 }
