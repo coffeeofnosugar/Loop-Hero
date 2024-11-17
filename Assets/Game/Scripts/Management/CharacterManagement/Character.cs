@@ -1,5 +1,6 @@
 ﻿using Animancer;
 using Animancer.FSM;
+using Coffee.Core.MapManagement;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -12,27 +13,28 @@ namespace Coffee.Core.CharacterManagement
     {
         [EnumToggleButtons, HideLabel] public State state;
 
-        [SerializeField] private AnimancerComponent animancer;
-        public AnimancerComponent Animancer => animancer;
-        
-        [SerializeField] private StateMachine<State, CharacterState>.WithDefault stateMachine;
-        public StateMachine<State, CharacterState>.WithDefault StateMachine => stateMachine;
-
-        [SerializeField] private Brain brain;
-        public Brain Brain => brain;
-        
-        [SerializeField] private SplineAnimate splineAnimate;
-        public SplineAnimate SplineAnimate => splineAnimate;
-
+        public CharacterData Data;
+        public CharacterConfig Config;
+        public AnimancerComponent Animancer;
+        public StateMachine<State, CharacterState>.WithDefault StateMachine;
+        public Brain Brain;
+        public SplineAnimate SplineAnimate;
         public int Site;
 
         private void Awake()
         {
-            stateMachine.InitializeAfterDeserialize();
+            Initialized();
+            StateMachine.InitializeAfterDeserialize();
             if (SplineAnimate.Container == null)
+                SplineAnimate.Container = LevelManager.Instance.splineContainer;
+        }
+
+        protected virtual void Initialized()
+        {
+            Data = new()
             {
-                SplineAnimate.Container = FindObjectOfType<SplineContainer>();
-            }
+                health = Config.MaxHealth,
+            };
         }
     }
 }

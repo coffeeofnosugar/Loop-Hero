@@ -970,13 +970,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  animancer: {fileID: 1578066399420083156}
-  stateMachine:
+  Data:
+    health: 0
+  Config: {fileID: 11400000, guid: b181dc05efb81ef43a6d095fa00b290d, type: 2}
+  Animancer: {fileID: 1578066399420083156}
+  StateMachine:
     _CurrentState: {fileID: 5886562003108861189}
     _CurrentKey: 0
     _DefaultKey: 0
-  brain: {fileID: 7077177119658129051}
-  splineAnimate: {fileID: 4149087782628727400}
+  Brain: {fileID: 7077177119658129051}
+  SplineAnimate: {fileID: 4149087782628727400}
   Site: 0
   fightCamera: {fileID: 8348510711350932313}
   fightPoint: {fileID: 965023801634981230}
