@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:yousandi.cn,2023:
+--- !u!1 &4911234725441879183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 7
+  m_Component:
+  - component: {fileID: 965023801634981230}
+  m_Layer: 7
+  m_HasEditorInfo: 1
+  m_Name: FightPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &965023801634981230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4911234725441879183}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2312087442737548264}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7711509797210098857
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 8348510711350932313}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5.7, y: 1.06, z: 0.36}
+  m_LocalPosition: {x: 5.633, y: 1.06, z: 0.853}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -430,7 +462,7 @@ PrefabInstance:
     - target: {fileID: 3638564580348594621, guid: 5ff69b1dba1d379429d509ebf5c54b5a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3638564580348594621, guid: 5ff69b1dba1d379429d509ebf5c54b5a,
         type: 3}
@@ -879,6 +911,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6886364227522101284}
+    - targetCorrespondingSourceObject: {fileID: 3638564580348594621, guid: 5ff69b1dba1d379429d509ebf5c54b5a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 965023801634981230}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6891382586631965721, guid: 5ff69b1dba1d379429d509ebf5c54b5a,
         type: 3}
@@ -943,6 +979,7 @@ MonoBehaviour:
   splineAnimate: {fileID: 4149087782628727400}
   Site: 0
   fightCamera: {fileID: 8348510711350932313}
+  fightPoint: {fileID: 965023801634981230}
 --- !u!114 &5886562003108861189 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4889128563529340752, guid: 5ff69b1dba1d379429d509ebf5c54b5a,

@@ -3,9 +3,11 @@ using UnityEngine;
 
 namespace Coffee.Core.CharacterManagement
 {
+    [SelectionBase]
     public class Hero : Character
     {
         public GameObject fightCamera;
+        public Transform fightPoint;
 
         private void Awake()
         {

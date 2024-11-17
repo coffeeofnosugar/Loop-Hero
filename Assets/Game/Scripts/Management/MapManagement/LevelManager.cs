@@ -46,7 +46,7 @@ namespace Coffee.Core.MapManagement
             enabled = false;
         }
 
-
+        [Button(ButtonSizes.Gigantic)]
         public void StartGame()
         {
             Hero.state = State.Walk;
