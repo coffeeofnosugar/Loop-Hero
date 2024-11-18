@@ -33,10 +33,13 @@ MonoBehaviour:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
     - Cinemachine
+    - KinoBloom.Runtime
     - Kybernetik.Animancer
     - Kybernetik.Animancer.FSM
     - SingularityGroup.HotReload.Runtime
     - SingularityGroup.HotReload.Runtime.Public
+    - ToonyColorsPro.Runtime
+    - ToonyColorsPro2.Demo
     - UniTask
     - UniTask.Addressables
     - UniTask.DOTween

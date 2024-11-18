@@ -28,7 +28,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: b94a90c9516c9cc42bf2d46a3d63a76a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -574,13 +574,13 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Bias: 0
+    m_NormalBias: 0
+    m_NearPlane: 1.56
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -611,7 +611,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5000
+  m_ColorTemperature: 5500
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 3
-  m_UsePipelineSettings: 1
+  m_UsePipelineSettings: 0
   m_AdditionalLightsShadowResolutionTier: 2
   m_LightLayerMask: 1
   m_RenderingLayers: 1
@@ -845,7 +845,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
+  sharedProfile: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
 --- !u!4 &832575519
 Transform:
   m_ObjectHideFlags: 0
@@ -2765,7 +2765,7 @@ MonoBehaviour:
   timeLine: {fileID: 619732005}
   heroIcon: {fileID: 1384507511}
   enemyIcon: {fileID: 1667897626}
-  multiplier: 3.9000003
+  multiplier: 18.8
 --- !u!1 &1379382474
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,7 +2824,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 85038617351b841ecbd4c43031cb570c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4233d70a3c682444cb4c84dbfde14975, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2877,7 +2877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 96.5, y: 15}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1384507512
@@ -2900,7 +2900,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9e6c2d2870fb6406b8064849d68d02d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6350455e155b4424ca1398fcccc2b751, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2976,7 +2976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7ceb2d0c0cad4406c86f3406bef8e5c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d7066b4010084837b845186c6da4388, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3281,9 +3281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5503e9101d34fae8b8397d7d39244e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiElements:
-  - {fileID: 890142887}
-  - {fileID: 1367837421}
 --- !u!1001 &1610399811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3385,7 +3382,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667897625}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3393,7 +3390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 157.20001, y: 15}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1667897627
@@ -3416,7 +3413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2e9e96abcb1de4aa281765054983851a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfdb864115dd04df2b18cd36ec8d65d6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4921,6 +4918,8 @@ MonoBehaviour:
   upBar: {fileID: 6004679039854478632}
   downBar: {fileID: 514012165768902970}
   _textMeshPro: {fileID: 125409986753055771}
+  _currentValue: 0
+  _maxValue: 0
 --- !u!1 &5134765531873409077
 GameObject:
   m_ObjectHideFlags: 0

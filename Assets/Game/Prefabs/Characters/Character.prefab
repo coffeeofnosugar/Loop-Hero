@@ -3618,13 +3618,13 @@ MonoBehaviour:
   state: 0
   Data:
     health: 0
+    attackSpeed: 0
   Config: {fileID: 11400000, guid: ef90f77daf05ee44a8ba313bf3427bbb, type: 2}
   Animancer: {fileID: 544517146925181313}
   StateMachine:
     _CurrentState: {fileID: 4889128563529340752}
     _CurrentKey: 0
     _DefaultKey: 0
-  Brain: {fileID: 8097409914328249550}
   SplineAnimate: {fileID: 3169528261906782269}
   Site: 0
 --- !u!114 &3169528261906782269
@@ -4742,7 +4742,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 014fbaa82701c3f4bbd9c27c7a0650e5, type: 2}
+  - {fileID: 2100000, guid: 2a50153e305edc64389a690279e7064b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
