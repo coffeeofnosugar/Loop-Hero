@@ -30,6 +30,8 @@ Shader /*ase_name*/ "Hidden/Universal/Unlit" /*end*/
 				Opaque:SetPropertyOnPass:Forward:ZWrite,On
 				Opaque:HideOption:  Blend
 				Opaque:RemoveDefine:_SURFACE_TYPE_TRANSPARENT 1
+				Opaque:HidePort:Forward:Alpha
+				Opaque:RefreshOption:Alpha Clipping
 				Opaque:ExcludePass:Universal2D
 				Opaque:ExcludePass:DepthNormalsOnly
 				Transparent:SetPropertyOnSubShader:RenderType,Transparent
@@ -37,6 +39,7 @@ Shader /*ase_name*/ "Hidden/Universal/Unlit" /*end*/
 				Transparent:SetPropertyOnPass:Forward:ZWrite,Off
 				Transparent:ShowOption:  Blend
 				Transparent:SetDefine:_SURFACE_TYPE_TRANSPARENT 1
+				Transparent:ShowPort:Forward:Alpha
 				Transparent:ExcludePass:Universal2D
 				Transparent:ExcludePass:DepthNormalsOnly
 			Option:  Blend:Alpha,Premultiply,Additive,Multiply:Alpha
@@ -57,16 +60,28 @@ Shader /*ase_name*/ "Hidden/Universal/Unlit" /*end*/
 				false,disable:SetPropertyOnPass:DepthNormals:ChangeTagValue,LightMode,DepthNormals
 				true:SetPropertyOnPass:Forward:ChangeTagValue,LightMode,UniversalForwardOnly
 				true:SetPropertyOnPass:DepthNormals:ChangeTagValue,LightMode,DepthNormalsOnly
+			Option:Alpha Clipping:false,true:true
+				true:SetDefine:pragma multi_compile_local _ALPHATEST_ON
+				true:ShowPort:Forward:Alpha
+				true:ShowPort:Forward:Alpha Clip Threshold
+				true?Cast Shadows=true:ShowOption:  Use Shadow Threshold
+				true?Surface=Opaque:SetPropertyOnSubShader:RenderType,TransparentCutout
+				true?Surface=Opaque:SetPropertyOnSubShader:RenderQueue,AlphaTest
+				false:RemoveDefine:pragma multi_compile_local _ALPHATEST_ON
+				false:HidePort:Forward:Alpha Clip Threshold
+				false:SetOption:  Use Shadow Threshold,0
+				false:HideOption:  Use Shadow Threshold
+				false:RefreshOption:Surface
+			Option:  Use Shadow Threshold:false,true:false
+				true:ShowPort:Forward:Alpha Clip Threshold Shadow
+				true:SetDefine:_ALPHATEST_SHADOW_ON 1
+				false,disable:RemoveDefine:_ALPHATEST_SHADOW_ON 1
+				false,disable:HidePort:Forward:Alpha Clip Threshold Shadow
 			Option:Cast Shadows:false,true:true
 				true:IncludePass:ShadowCaster
 				false,disable:ExcludePass:ShadowCaster
-				true:ShowOption:  Use Shadow Threshold
+				true?Alpha Clipping=true:ShowOption:  Use Shadow Threshold
 				false:HideOption:  Use Shadow Threshold
-			Option:  Use Shadow Threshold:false,true:false
-				true:SetDefine:_ALPHATEST_SHADOW_ON 1
-				true:ShowPort:Forward:Alpha Clip Threshold Shadow
-				false,disable:RemoveDefine:_ALPHATEST_SHADOW_ON 1
-				false,disable:HidePort:Forward:Alpha Clip Threshold Shadow
 			Option:Receive Shadows:false,true:true
 				true:SetDefine:Forward:pragma shader_feature_local _RECEIVE_SHADOWS_OFF
 				false:RemoveDefine:Forward:pragma shader_feature_local _RECEIVE_SHADOWS_OFF
@@ -82,14 +97,14 @@ Shader /*ase_name*/ "Hidden/Universal/Unlit" /*end*/
 				true:SetDefine:Forward:pragma instancing_options renderinglayer
 				false:RemoveDefine:Forward:pragma instancing_options renderinglayer
 			Option:LOD CrossFade:false,true:true
-				true:SetDefine:Forward:pragma multi_compile _ LOD_FADE_CROSSFADE
-				true:SetDefine:ShadowCaster:pragma multi_compile _ LOD_FADE_CROSSFADE
-				true:SetDefine:DepthOnly:pragma multi_compile _ LOD_FADE_CROSSFADE
-				true:SetDefine:DepthNormals:pragma multi_compile _ LOD_FADE_CROSSFADE
-				false:RemoveDefine:Forward:pragma multi_compile _ LOD_FADE_CROSSFADE
-				false:RemoveDefine:ShadowCaster:pragma multi_compile _ LOD_FADE_CROSSFADE
-				false:RemoveDefine:DepthOnly:pragma multi_compile _ LOD_FADE_CROSSFADE
-				false:RemoveDefine:DepthNormals:pragma multi_compile _ LOD_FADE_CROSSFADE
+				true:SetDefine:Forward:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				true:SetDefine:ShadowCaster:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				true:SetDefine:DepthOnly:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				true:SetDefine:DepthNormals:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				false:RemoveDefine:Forward:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				false:RemoveDefine:ShadowCaster:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				false:RemoveDefine:DepthOnly:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				false:RemoveDefine:DepthNormals:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
 			Option:Built-in Fog:false,true:true
 				true:SetDefine:Forward:pragma multi_compile_fog
 				false:RemoveDefine:Forward:pragma multi_compile_fog
@@ -172,8 +187,6 @@ Shader /*ase_name*/ "Hidden/Universal/Unlit" /*end*/
 				Relative:SetPortName:Forward:5,Vertex Offset
 				Absolute:SetPortName:ExtraPrePass:3,Vertex Position
 				Relative:SetPortName:ExtraPrePass:3,Vertex Offset
-			Port:Forward:Alpha Clip Threshold
-				On:SetDefine:_ALPHATEST_ON 1
 		*/
 
 		Tags

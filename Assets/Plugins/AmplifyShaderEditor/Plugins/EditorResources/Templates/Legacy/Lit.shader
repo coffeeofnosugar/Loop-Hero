@@ -1847,9 +1847,10 @@ Shader /*ase_name*/ "Hidden/Legacy/Lit" /*end*/
 				float4 vertex : POSITION;
 				float4 tangent : TANGENT;
 				float3 normal : NORMAL;
+				float4 texcoord : TEXCOORD0;
 				float4 texcoord1 : TEXCOORD1;
 				float4 texcoord2 : TEXCOORD2;
-				/*ase_vdata:p=p;t=t;n=n;uv1=tc1.xyzw;uv2=tc2.xyzw*/
+				/*ase_vdata:p=p;t=t;n=n;uv0=tc0.xyzw;uv1=tc1.xyzw;uv2=tc2.xyzw*/
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 			struct v2f {

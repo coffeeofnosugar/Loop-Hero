@@ -4,6 +4,7 @@ Shader "Hidden/ScreenPosInputsNode"
 	{
 		CGINCLUDE
 			#include "UnityCG.cginc"
+			#include "Preview.cginc"
 			inline float4 PrevComputeNonStereoScreenPos (float4 pos) {
 				float4 o = pos * 0.5f;
 				o.xy = float2(o.x, o.y*_ProjectionParams.x) + o.w;

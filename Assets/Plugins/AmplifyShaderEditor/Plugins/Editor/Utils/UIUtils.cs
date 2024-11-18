@@ -1194,6 +1194,29 @@ namespace AmplifyShaderEditor
 				Texture2DShader = AssetDatabase.LoadAssetAtPath<Shader>( AssetDatabase.GUIDToAssetPath( "13bd295c44d04e1419f20f792d331e33" ) ); //texture2d shader
 		}
 
+		public static void SetPreviewShaderConstants()
+		{
+			var worldCameraPos = new Vector3( 0, 0, -5 );
+			var objectToWorldMatrix = Matrix4x4.identity;
+			var worldToObjectMatrix = Matrix4x4.identity;
+			var viewMatrix = new Matrix4x4(
+				new Vector4( 1, 0, 0, 0 ),
+				new Vector4( 0, 1, 0, 0 ),
+				new Vector4( 0, 0,-1,-1 ),
+				new Vector4( 0, 0, 0, 1 ) );
+			var viewMatrixInv = new Matrix4x4(
+				new Vector4( 1, 0, 0, 0 ),
+				new Vector4( 0, 1, 0, 0 ),
+				new Vector4( 0, 0,-1, 0 ),
+				new Vector4( 0, 0,-1, 1 ) );
+
+			Shader.SetGlobalVector( "preview_WorldSpaceCameraPos", worldCameraPos ); ;
+			Shader.SetGlobalMatrix( "preview_WorldToObject", worldToObjectMatrix );
+			Shader.SetGlobalMatrix( "preview_ObjectToWorld", objectToWorldMatrix );
+			Shader.SetGlobalMatrix( "preview_MatrixV", viewMatrix );
+			Shader.SetGlobalMatrix( "preview_MatrixInvV", viewMatrixInv );
+		}
+
 		private static void FetchMenuItemStyles()
 		{
 			ObjectFieldThumb = new GUIStyle( (GUIStyle)"ObjectFieldThumb" );

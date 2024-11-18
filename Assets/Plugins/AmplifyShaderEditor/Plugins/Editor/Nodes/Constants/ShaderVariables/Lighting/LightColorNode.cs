@@ -6,7 +6,7 @@ using UnityEngine;
 namespace AmplifyShaderEditor
 {
 	[System.Serializable]
-	[NodeAttributes( "Light Color", "Lighting", "Light Color, RGB value already contains light intensity while A only contains light intensity" )]
+	[NodeAttributes( "Main Light Color", "Lighting", "Light color of main Directional light. RGB value already contains light intensity while A only contains light intensity." )]
 	public sealed class LightColorNode : ShaderVariablesNode
 	{
 		private const string m_lightColorValue = "_LightColor0";

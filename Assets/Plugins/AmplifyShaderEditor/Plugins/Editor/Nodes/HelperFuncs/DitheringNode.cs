@@ -278,7 +278,7 @@ namespace AmplifyShaderEditor
 			if( m_inputPorts[ 0 ].IsConnected )
 			{
 				string driver = m_inputPorts[ 0 ].GeneratePortInstructions( ref dataCollector );
-				dataCollector.AddLocalVariable( UniqueId, "dither" + OutputId+" = step( dither"+ OutputId + ", "+ driver + " );" );
+				dataCollector.AddLocalVariable( UniqueId, "dither" + OutputId+" = step( dither"+ OutputId + ", saturate( "+ driver + " * 1.00001 ) );" );
 			}
 
 			//RegisterLocalVariable( 0, functionResult, ref dataCollector, "dither" + OutputId );

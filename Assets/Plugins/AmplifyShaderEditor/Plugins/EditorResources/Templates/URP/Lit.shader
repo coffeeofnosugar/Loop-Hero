@@ -66,12 +66,15 @@ Shader /*ase_name*/ "Hidden/Universal/Lit" /*end*/
 				Opaque:HideOption:  Refraction Model
 				Opaque:HideOption:  Blend
 				Opaque:RemoveDefine:_SURFACE_TYPE_TRANSPARENT 1
+				Opaque:HidePort:Forward:Alpha
+				Opaque:RefreshOption:Alpha Clipping
 				Transparent:SetPropertyOnSubShader:RenderType,Transparent
 				Transparent:SetPropertyOnSubShader:RenderQueue,Transparent
 				Transparent:SetPropertyOnSubShader:ZWrite,Off
 				Transparent:ShowOption:  Refraction Model
 				Transparent:ShowOption:  Blend
 				Transparent:SetDefine:_SURFACE_TYPE_TRANSPARENT 1
+				Transparent:ShowPort:Forward:Alpha
 			Option:  Refraction Model:None,Legacy:None
 				None,disable:HidePort:Forward:Refraction Index
 				None,disable:HidePort:Forward:Refraction Color
@@ -94,6 +97,23 @@ Shader /*ase_name*/ "Hidden/Universal/Lit" /*end*/
 				On:SetPropertyOnSubShader:CullMode,Off
 				Cull Back:SetPropertyOnSubShader:CullMode,Back
 				Cull Front:SetPropertyOnSubShader:CullMode,Front
+			Option:Alpha Clipping:false,true:true
+				true:SetDefine:pragma multi_compile_local_fragment _ALPHATEST_ON
+				true:ShowPort:Forward:Alpha
+				true:ShowPort:Forward:Alpha Clip Threshold
+				true?Cast Shadows=true:ShowOption:  Use Shadow Threshold
+				true?Surface=Opaque:SetPropertyOnSubShader:RenderType,TransparentCutout
+				true?Surface=Opaque:SetPropertyOnSubShader:RenderQueue,AlphaTest
+				false:RemoveDefine:pragma multi_compile_local_fragment _ALPHATEST_ON
+				false:HidePort:Forward:Alpha Clip Threshold
+				false:SetOption:  Use Shadow Threshold,0
+				false:HideOption:  Use Shadow Threshold
+				false:RefreshOption:Surface
+			Option:  Use Shadow Threshold:false,true:false
+				true:ShowPort:Forward:Alpha Clip Threshold Shadow
+				true:SetDefine:_ALPHATEST_SHADOW_ON 1
+				false,disable:RemoveDefine:_ALPHATEST_SHADOW_ON 1
+				false,disable:HidePort:Forward:Alpha Clip Threshold Shadow
 			Option:Fragment Normal Space,InvertActionOnDeselection:Tangent,Object,World:Tangent
 				Tangent:SetDefine:_NORMAL_DROPOFF_TS 1
 				Tangent:SetPortName:Forward:1,Normal
@@ -169,13 +189,8 @@ Shader /*ase_name*/ "Hidden/Universal/Lit" /*end*/
 			Option:Cast Shadows:false,true:true
 				true:IncludePass:ShadowCaster
 				false,disable:ExcludePass:ShadowCaster
-				true:ShowOption:  Use Shadow Threshold
+				true?Alpha Clipping=true:ShowOption:  Use Shadow Threshold
 				false:HideOption:  Use Shadow Threshold
-			Option:  Use Shadow Threshold:false,true:false
-				true:SetDefine:_ALPHATEST_SHADOW_ON 1
-				true:ShowPort:Forward:Alpha Clip Threshold Shadow
-				false,disable:RemoveDefine:_ALPHATEST_SHADOW_ON 1
-				false,disable:HidePort:Forward:Alpha Clip Threshold Shadow
 			Option:Receive Shadows:false,true:true
 				true:SetDefine:Forward:pragma shader_feature_local _RECEIVE_SHADOWS_OFF
 				true:SetDefine:GBuffer:pragma shader_feature_local _RECEIVE_SHADOWS_OFF
@@ -200,16 +215,16 @@ Shader /*ase_name*/ "Hidden/Universal/Lit" /*end*/
 				false:RemoveDefine:Forward:pragma instancing_options renderinglayer
 				false:RemoveDefine:GBuffer:pragma instancing_options renderinglayer
 			Option:LOD CrossFade:false,true:true
-				true:SetDefine:Forward:pragma multi_compile _ LOD_FADE_CROSSFADE
-				true:SetDefine:GBuffer:pragma multi_compile _ LOD_FADE_CROSSFADE
-				true:SetDefine:ShadowCaster:pragma multi_compile _ LOD_FADE_CROSSFADE
-				true:SetDefine:DepthOnly:pragma multi_compile _ LOD_FADE_CROSSFADE
-				true:SetDefine:DepthNormals:pragma multi_compile _ LOD_FADE_CROSSFADE
-				false:RemoveDefine:Forward:pragma multi_compile _ LOD_FADE_CROSSFADE
-				false:RemoveDefine:GBuffer:pragma multi_compile _ LOD_FADE_CROSSFADE
-				false:RemoveDefine:ShadowCaster:pragma multi_compile _ LOD_FADE_CROSSFADE
-				false:RemoveDefine:DepthOnly:pragma multi_compile _ LOD_FADE_CROSSFADE
-				false:RemoveDefine:DepthNormals:pragma multi_compile _ LOD_FADE_CROSSFADE
+				true:SetDefine:Forward:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				true:SetDefine:GBuffer:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				true:SetDefine:ShadowCaster:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				true:SetDefine:DepthOnly:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				true:SetDefine:DepthNormals:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				false:RemoveDefine:Forward:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				false:RemoveDefine:GBuffer:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				false:RemoveDefine:ShadowCaster:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				false:RemoveDefine:DepthOnly:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
+				false:RemoveDefine:DepthNormals:pragma multi_compile_fragment _ LOD_FADE_CROSSFADE
 			Option:Built-in Fog:false,true:true
 				true:SetDefine:Forward:pragma multi_compile_fog
 				true:SetDefine:GBuffer:pragma multi_compile_fog
@@ -325,10 +340,6 @@ Shader /*ase_name*/ "Hidden/Universal/Lit" /*end*/
 				On:SetDefine:_EMISSION
 			Port:Forward:Baked GI
 				On:SetDefine:ASE_BAKEDGI 1
-			Port:Forward:Alpha Clip Threshold
-				On:SetDefine:_ALPHATEST_ON 1
-			Port:Forward:Alpha Clip Threshold Shadow
-				On:SetDefine:_ALPHATEST_ON 1
 			Port:Forward:Normal
 				On:SetDefine:_NORMALMAP 1
 		*/
@@ -1259,7 +1270,7 @@ Shader /*ase_name*/ "Hidden/Universal/Lit" /*end*/
 							{
 								FORWARD_PLUS_SUBTRACTIVE_LIGHT_CHECK
 
-								Light light = GetAdditionalLight(lightIndex, inputData.positionWS);
+								Light light = GetAdditionalLight(lightIndex, inputData.positionWS, inputData.shadowMask);
 								#ifdef _LIGHT_LAYERS
 								if (IsMatchingLightLayer(light.layerMask, meshRenderingLayers))
 								#endif
@@ -1269,7 +1280,7 @@ Shader /*ase_name*/ "Hidden/Universal/Lit" /*end*/
 							}
 						#endif
 						LIGHT_LOOP_BEGIN( pixelLightCount )
-							Light light = GetAdditionalLight(lightIndex, inputData.positionWS);
+							Light light = GetAdditionalLight(lightIndex, inputData.positionWS, inputData.shadowMask);
 							#ifdef _LIGHT_LAYERS
 							if (IsMatchingLightLayer(light.layerMask, meshRenderingLayers))
 							#endif
@@ -1308,7 +1319,7 @@ Shader /*ase_name*/ "Hidden/Universal/Lit" /*end*/
 							{
 								FORWARD_PLUS_SUBTRACTIVE_LIGHT_CHECK
 
-								Light light = GetAdditionalLight(lightIndex, inputData.positionWS);
+								Light light = GetAdditionalLight(lightIndex, inputData.positionWS, inputData.shadowMask);
 								#ifdef _LIGHT_LAYERS
 								if (IsMatchingLightLayer(light.layerMask, meshRenderingLayers))
 								#endif
@@ -1318,7 +1329,7 @@ Shader /*ase_name*/ "Hidden/Universal/Lit" /*end*/
 							}
 						#endif
 						LIGHT_LOOP_BEGIN( pixelLightCount )
-							Light light = GetAdditionalLight(lightIndex, inputData.positionWS);
+							Light light = GetAdditionalLight(lightIndex, inputData.positionWS, inputData.shadowMask);
 							#ifdef _LIGHT_LAYERS
 							if (IsMatchingLightLayer(light.layerMask, meshRenderingLayers))
 							#endif

@@ -1661,74 +1661,75 @@ namespace AmplifyShaderEditor
 			return varName;
 		}
 
-		public string GetViewDir( bool useMasterNodeCategory = true, MasterNodePortCategory customCategory = MasterNodePortCategory.Fragment, NormalizeType normalizeType = NormalizeType.Regular )
+		public string GetViewVector( PrecisionType precisionType = PrecisionType.Float, bool useMasterNodeCategory = true, MasterNodePortCategory customCategory = MasterNodePortCategory.Fragment, ViewSpace space = ViewSpace.World )
 		{
-			// overriding precision
-			var precision = PrecisionType.Float;
-
-			string result = string.Empty;
-			if( GetCustomInterpolatedData( TemplateInfoOnSematics.WORLD_VIEW_DIR, WirePortDataType.FLOAT3, precision, ref result, useMasterNodeCategory, customCategory ) )
-				return result;
-
-			string varName = GeneratorUtils.WorldViewDirectionStr;//UIUtils.GetInputValueFromType( SurfaceInputs.VIEW_DIR );
-			if( HasCustomInterpolatedData( varName, useMasterNodeCategory, customCategory ) )
-				return varName;
-
-			string worldPos = GetWorldPos();
-
-			string formatStr = string.Empty;
-			if( IsSRP )
-				formatStr = "( _WorldSpaceCameraPos.xyz - {0} )";
-			else
-				formatStr = "UnityWorldSpaceViewDir({0})";
-
-			string viewDir = string.Format( formatStr, worldPos );
-			m_currentDataCollector.AddLocalVariable( -1, precision, WirePortDataType.FLOAT3, varName, viewDir );
-
-			switch( normalizeType )
+			string varName;
+			switch ( space )
 			{
-				default:
-				case NormalizeType.Off:
-				break;
-				case NormalizeType.Regular:
-				m_currentDataCollector.AddLocalVariable( -1, varName + " = normalize(" + varName + ");" );
-				break;
-				case NormalizeType.Safe:
-				m_currentDataCollector.AddLocalVariable( -1, varName + " = " + TemplateHelperFunctions.SafeNormalize( m_currentDataCollector, varName ) + ";" );
-				break;
+				case ViewSpace.Tangent: varName = GeneratorUtils.TangentViewVectorStr; break;
+				case ViewSpace.Object: varName = GeneratorUtils.ObjectViewVectorStr; break;
+				case ViewSpace.View: varName = GeneratorUtils.ViewViewVectorStr; break;
+				case ViewSpace.World:
+				default: varName = GeneratorUtils.WorldViewVectorStr; break;
+			}
+			if ( HasCustomInterpolatedData( varName, useMasterNodeCategory, customCategory ) )
+			{
+				return varName;
 			}
 
+			string worldPos = GetWorldPos();
+			string viewVectorWS = "( _WorldSpaceCameraPos.xyz - " + worldPos + " )";
 
-			//RegisterCustomInterpolatedData( varName, WirePortDataType.FLOAT3, PrecisionType.Float, viewDir, useMasterNodeCategory, customCategory );
+			string viewVector;
+			if ( space == ViewSpace.Tangent )
+			{
+				string tanToWorld0, tanToWorld1, tanToWorld2;
+				GetWorldTangentTf( precisionType, out tanToWorld0, out tanToWorld1, out tanToWorld2 );
+
+				viewVector = string.Format( " {0} * {3}.x + {1} * {3}.y  + {2} * {3}.z", tanToWorld0, tanToWorld1, tanToWorld2, viewVectorWS );
+			}
+			else if ( space == ViewSpace.Object )
+			{
+				viewVector = string.Format( "mul( ( float3x3 )unity_WorldToObject, {0} )", viewVectorWS );
+			}
+			else if ( space == ViewSpace.View )
+			{
+				viewVector = string.Format( "mul( ( float3x3 )UNITY_MATRIX_V, {0} )", viewVectorWS );
+			}
+			else
+			{
+				viewVector = viewVectorWS;
+			}
+
+			m_currentDataCollector.AddLocalVariable( -1, precisionType, WirePortDataType.FLOAT3, varName, viewVector );
+
 			return varName;
 		}
 
-		public string GetTangentViewDir( PrecisionType precisionType, bool useMasterNodeCategory = true, MasterNodePortCategory customCategory = MasterNodePortCategory.Fragment, NormalizeType normalizeType = NormalizeType.Regular )
+		public string GetViewDir( PrecisionType precisionType = PrecisionType.Float, bool useMasterNodeCategory = true, MasterNodePortCategory customCategory = MasterNodePortCategory.Fragment, NormalizeType normalizeType = NormalizeType.Regular, ViewSpace space = ViewSpace.World )
 		{
-			string varName = GeneratorUtils.TangentViewDirectionStr;
-			if( HasCustomInterpolatedData( varName, useMasterNodeCategory, customCategory ) )
-				return varName;
-
-			string tanToWorld0 = string.Empty;
-			string tanToWorld1 = string.Empty;
-			string tanToWorld2 = string.Empty;
-
-			GetWorldTangentTf( precisionType, out tanToWorld0, out tanToWorld1, out tanToWorld2 );
-			string viewDir = GetViewDir();
-			string tanViewDir = string.Format( " {0} * {3}.x + {1} * {3}.y  + {2} * {3}.z", tanToWorld0, tanToWorld1, tanToWorld2, viewDir );
-
-			m_currentDataCollector.AddLocalVariable( -1, precisionType, WirePortDataType.FLOAT3, varName, tanViewDir );
-			switch( normalizeType )
+			string varName;
+			switch ( space )
 			{
-				default:
-				case NormalizeType.Off: break;
-				case NormalizeType.Regular:
-				m_currentDataCollector.AddLocalVariable( -1, varName + " = normalize(" + varName + ");" );
-				break;
-				case NormalizeType.Safe:
-				m_currentDataCollector.AddLocalVariable( -1, varName + " = " + TemplateHelperFunctions.SafeNormalize( m_currentDataCollector, varName ) + ";" );
-				break;
+				case ViewSpace.Tangent: varName = ( normalizeType == NormalizeType.Regular ) ? GeneratorUtils.TangentViewDirectionStr : GeneratorUtils.TangentViewDirectionSafeStr; break;
+				case ViewSpace.Object: varName = ( normalizeType == NormalizeType.Regular ) ? GeneratorUtils.ObjectViewDirectionStr : GeneratorUtils.ObjectViewDirectionSafeStr; break;
+				case ViewSpace.View: varName = ( normalizeType == NormalizeType.Regular ) ? GeneratorUtils.ViewViewDirectionStr : GeneratorUtils.ViewViewDirectionSafeStr; break;
+				case ViewSpace.World:
+				default: varName = ( normalizeType == NormalizeType.Regular ) ? GeneratorUtils.WorldViewDirectionStr : GeneratorUtils.WorldViewDirectionSafeStr; break;
 			}
+
+			string viewVectorWS = GetViewVector( precisionType, useMasterNodeCategory, customCategory, space );
+
+			if ( normalizeType == NormalizeType.Regular )
+			{
+				viewVectorWS = "normalize( " + viewVectorWS + " )";
+			}
+			else if ( normalizeType == NormalizeType.Safe )
+			{
+				viewVectorWS = TemplateHelperFunctions.SafeNormalize( m_currentDataCollector, viewVectorWS );
+			}
+
+			m_currentDataCollector.AddLocalVariable( -1, precisionType, WirePortDataType.FLOAT3, varName, viewVectorWS );
 
 			return varName;
 		}

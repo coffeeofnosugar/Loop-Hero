@@ -104,7 +104,8 @@ namespace AmplifyShaderEditor
 
 				string vertexSpace = m_viewSpaceInt == 1 ? " * _ProjectionParams.w" : "";
 				string vertexInstruction = "-UnityObjectToViewPos( " + vertexVarName + " ).z" + vertexSpace;
-				dataCollector.AddVertexInstruction( "float " + m_vertexNameStr[ m_viewSpaceInt ] + " = " + vertexInstruction, UniqueId );
+				
+				dataCollector.AddLocalVariable( UniqueId, CurrentPrecisionType, WirePortDataType.FLOAT3, m_vertexNameStr[ m_viewSpaceInt ], vertexInstruction );
 
 				return m_vertexNameStr[ m_viewSpaceInt ];
 			}
